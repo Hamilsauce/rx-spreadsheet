@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  z-index: 0;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#app-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+}
+
+#app-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  overflow-y: scroll;
+}
+table {
+  /* position: sticky; */
+  /* top: 0; */
+  /* left: 0; */
+}
+th {
+  position: sticky;
+  top: 0;
+  left: 0;
+  /* overflow-y: scroll; */
+  
+}
+tr, tbody {
+  /* display: contents; */
+}
+
+li {
+    list-style: none;
+}
+li:before {
+    content: "✓ ";
+}
+
+input {
+    border: none;
+    width: 80px;
+    font-size: 14px;
+    padding: 2px;
+}
+
+input:hover {
+    background-color: #eee;
+}
+
+input:focus {
+    background-color: #ccf;
+}
+
+input:not(:focus) {
+    text-align: right;
+}
+
+table {
+  /* display: grid; */
+grid-template-columns:  repeat(auto, 30px);
+grid-template-rows:   repeat(auto, 30px);
+    border-collapse: collapse;  
+    /* grid-auto-flow: row  */;
+}
+
+td {
+    border: 1px solid #999;
+    padding: 0;
+}
+tbody tr td:first-child  {
+  /* position: sticky; */
+  left: 0;
+    /* border: 1px solid #999; */
+    /* padding: 0; */
+}
+thead tr td  {
+  top: 0;
+    /* padding: 0; */
+}
+
+
+
+thead,tbody, tr {
+  /* display: contents; */
+}
+
+thead:first-child td, tbody tr td:first-child {
+    background-color: #ccc;
+    padding: 1px 3px;
+    font-weight: bold;
+    text-align: center;
+  /* position: sticky; */
+}
+
+footer {
+    font-size: 80%;
+}

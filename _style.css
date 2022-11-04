@@ -1,0 +1,80 @@
+:root {
+  grey1: #373A43;
+  bluegrey1: #222734;
+  grey1: #222734;
+  darkgrey1: #1E1E1E;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  z-index: 0;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #D4D4D4;
+}
+
+#app-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+}
+
+#app-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3px;
+  overflow-y: scroll;
+  background: #D4D4D4;
+  height: 100%;
+}
+
+.sheet {
+  display: grid;
+  /* grid-template-rows: repeat(6, 150px); */
+  grid-auto-rows: 150px;
+  grid-auto-columns: 150px;
+  /* grid-template-columns: repeat(4, 150px); */
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+  background: #D4D4D4;
+  overflow: scroll;
+}
+
+.cell {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  gap: 0px;
+  background: #FFFFFF;
+}
+
+.cell[data-selected=true] {
+  outline: 2px solid orange;
+  /* background: #FFFFFF; */
+}

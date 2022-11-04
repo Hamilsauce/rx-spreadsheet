@@ -1,0 +1,18 @@
+h1,
+h2 {
+  font-family: Lato;
+}
+
+.draggable {
+  position: absolute;
+  cursor: move;
+  width: 32px;
+  height: 32px;
+  left: 90px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  touch-action: none;
+}

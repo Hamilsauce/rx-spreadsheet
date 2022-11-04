@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<calcChain xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+  <c r="A12" i="2" l="1" />
+  <c r="B12" i="2" />
+  <c r="A13" i="2" />
+  <c r="B13" i="2" />
+  <c r="B11" i="2" />
+  <c r="A11" i="2" />
+  <c r="C13" i="2" />
+  <c r="C12" i="2" />
+  <c r="C11" i="2" />
+  <c r="C3" i="2" />
+  <c r="C4" i="2" />
+  <c r="C2" i="2" />
+  <c r="A1" i="1" />
+</calcChain>

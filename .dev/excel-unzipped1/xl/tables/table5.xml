@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<table xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="xr xr3" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3" id="10" xr:uid="{4B50EBEE-3A6F-48DB-BFEF-340B72A95C40}" name="Data" displayName="Data" ref="A1:J10" tableType="queryTable" totalsRowShown="0">
+
+  <autoFilter ref="A1:J10" xr:uid="{4B50EBEE-3A6F-48DB-BFEF-340B72A95C40}" />
+  <tableColumns count="10">
+    <tableColumn id="1" xr3:uid="{C0BDC6CD-0849-4CA1-9229-88658065EDE2}" uniqueName="1" name="Mode" queryTableFieldId="1" dataDxfId="32" />
+    <tableColumn id="2" xr3:uid="{30C0FE7F-588C-47B2-B442-61B73554468E}" uniqueName="2" name="White note" queryTableFieldId="2" dataDxfId="31" />
+    <tableColumn id="3" xr3:uid="{51A563C1-8AFD-4CFC-B92A-B087D881FEF6}" uniqueName="3" name="Intervals with respect to the tonic unison" queryTableFieldId="3" dataDxfId="30" />
+    <tableColumn id="4" xr3:uid="{0A20693B-2F16-4594-9BC0-E59F7AF779D0}" uniqueName="4" name="Intervals with respect to the tonic second" queryTableFieldId="4" dataDxfId="29" />
+    <tableColumn id="5" xr3:uid="{982C2F30-C11A-46EE-B3D3-D45F4A9FF104}" uniqueName="5" name="Intervals with respect to the tonic third" queryTableFieldId="5" dataDxfId="28" />
+    <tableColumn id="6" xr3:uid="{11693B2B-F8C7-4792-8433-D67B935FD11F}" uniqueName="6" name="Intervals with respect to the tonic fourth" queryTableFieldId="6" dataDxfId="27" />
+    <tableColumn id="7" xr3:uid="{FD85E5EC-CE77-4107-90BE-B4443A33FA8E}" uniqueName="7" name="Intervals with respect to the tonic fifth" queryTableFieldId="7" dataDxfId="26" />
+    <tableColumn id="8" xr3:uid="{82DDD79F-E2B3-4932-859E-0A4BDC08A048}" uniqueName="8" name="Intervals with respect to the tonic sixth" queryTableFieldId="8" dataDxfId="25" />
+    <tableColumn id="9" xr3:uid="{0D2655BD-D917-46EF-B599-1C16CA336C32}" uniqueName="9" name="Intervals with respect to the tonic seventh" queryTableFieldId="9" dataDxfId="24" />
+    <tableColumn id="10" xr3:uid="{C25BFE8E-E42D-4EE6-BC83-4B88E7F2DA98}" uniqueName="10" name="Intervals with respect to the tonic octave" queryTableFieldId="10" dataDxfId="23" />
+  </tableColumns>
+  <tableStyleInfo name="TableStyleMedium7" showFirstColumn="0" showLastColumn="0" showRowStripes="1" showColumnStripes="0" />
+</table>

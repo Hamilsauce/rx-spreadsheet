@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+mc:Ignorable="x15 xr xr6 xr10 xr2" 
+xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main"
+xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr6="http://schemas.microsoft.com/office/spreadsheetml/2016/revision6" xmlns:xr10="http://schemas.microsoft.com/office/spreadsheetml/2016/revision10" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2">
+
+  <fileVersion appName="xl" lastEdited="7" lowestEdited="7" rupBuild="25601" />
+  <workbookPr defaultThemeVersion="166925" />
+  <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <mc:Choice Requires="x15">
+      <x15ac:absPath url="https://seahag-my.sharepoint.com/personal/jake_seahag_onmicrosoft_com/Documents/Desktop/" xmlns:x15ac="http://schemas.microsoft.com/office/spreadsheetml/2010/11/ac" />
+    </mc:Choice>
+  </mc:AlternateContent>
+  <xr:revisionPtr revIDLastSave="0" documentId="8_{15D927F9-2554-2A42-87F1-A1DDAE989782}" xr6:coauthVersionLast="47" xr6:coauthVersionMax="47" xr10:uidLastSave="{00000000-0000-0000-0000-000000000000}" />
+  <bookViews>
+    <workbookView xWindow="-120" yWindow="-120" windowWidth="29040" windowHeight="16440" firstSheet="4" activeTab="8" xr2:uid="{3AFFC244-D67D-4B92-9027-AEA95AC885A7}" />
+  </bookViews>
+  <sheets>
+    <sheet name="notes" sheetId="11" r:id="rId1" />
+    <sheet name="scales" sheetId="10" r:id="rId2" />
+    <sheet name="ionian" sheetId="9" r:id="rId3" />
+    <sheet name="modal-tables" sheetId="8" r:id="rId4" />
+    <sheet name="Data" sheetId="7" r:id="rId5" />
+    <sheet name="Major and minor scalesEdit (2)" sheetId="6" r:id="rId6" />
+    <sheet name="Scale degree namesEdit" sheetId="5" r:id="rId7" />
+    <sheet name="Major and minor scalesEdit" sheetId="4" r:id="rId8" />
+    <sheet name="Merge1" sheetId="3" r:id="rId9" />
+    <sheet name="Musical Scales with the notes_ " sheetId="2" r:id="rId10" />
+    <sheet name="Sheet1" sheetId="1" r:id="rId11" />
+  </sheets>
+  <definedNames>
+    <definedName name="ExternalData_1" localSheetId="9" hidden="1">'Musical Scales with the notes_ '!$A$1:$A$2</definedName>
+    <definedName name="ExternalData_10" localSheetId="0" hidden="1">notes!$A$1:$A$19</definedName>
+    <definedName name="ExternalData_2" localSheetId="8" hidden="1">Merge1!$A$1:$B$19</definedName>
+    <definedName name="ExternalData_3" localSheetId="7" hidden="1">'Major and minor scalesEdit'!$A$1:$P$5</definedName>
+    <definedName name="ExternalData_4" localSheetId="6" hidden="1">'Scale degree namesEdit'!$A$1:$A$2</definedName>
+    <definedName name="ExternalData_5" localSheetId="5" hidden="1">'Major and minor scalesEdit (2)'!$A$1:$D$9</definedName>
+    <definedName name="ExternalData_6" localSheetId="4" hidden="1">Data!$A$1:$J$10</definedName>
+    <definedName name="ExternalData_7" localSheetId="3" hidden="1">'modal-tables'!$A$1:$A$2</definedName>
+    <definedName name="ExternalData_8" localSheetId="2" hidden="1">ionian!$A$1:$A$2</definedName>
+    <definedName name="ExternalData_9" localSheetId="1" hidden="1">scales!$A$1:$B$19</definedName>
+  </definedNames>
+  <calcPr calcId="191028" />
+  <extLst>
+    <ext uri="{140A7094-0E35-4892-8432-C4D2E57EDEB5}" xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main">
+      <x15:workbookPr chartTrackingRefBase="1" />
+    </ext>
+    <ext uri="{B58B0392-4F1F-4190-BB64-5DF3571DCE5F}" xmlns:xcalcf="http://schemas.microsoft.com/office/spreadsheetml/2018/calcfeatures">
+      <xcalcf:calcFeatures>
+        <xcalcf:feature name="microsoft.com:RD" />
+        <xcalcf:feature name="microsoft.com:Single" />
+        <xcalcf:feature name="microsoft.com:FV" />
+        <xcalcf:feature name="microsoft.com:CNMTM" />
+        <xcalcf:feature name="microsoft.com:LET_WF" />
+        <xcalcf:feature name="microsoft.com:LAMBDA_WF" />
+      </xcalcf:calcFeatures>
+    </ext>
+  </extLst>
+</workbook>

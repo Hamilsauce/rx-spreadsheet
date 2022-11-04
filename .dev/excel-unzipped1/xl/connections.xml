@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<connections xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="xr16" xmlns:xr16="http://schemas.microsoft.com/office/spreadsheetml/2017/revision16">
+<connection id="1" xr16:uid="{00000000-0015-0000-FFFF-FFFF00000000}" keepAlive="1" name="Query - Data" description="Connection to the 'Data' query in the workbook." type="5" refreshedVersion="7" background="1" saveData="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=Data;Extended Properties=&quot;&quot;" command="SELECT * FROM [Data]" />
+</connection>
+<connection id="2" xr16:uid="{00000000-0015-0000-FFFF-FFFF01000000}" keepAlive="1" name="Query - fixTable" description="Connection to the 'fixTable' query in the workbook." type="5" refreshedVersion="0" background="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=fixTable;Extended Properties=&quot;&quot;" command="SELECT * FROM [fixTable]" />
+</connection>
+<connection id="3" xr16:uid="{00000000-0015-0000-FFFF-FFFF02000000}" keepAlive="1" name="Query - ionian" description="Connection to the 'ionian' query in the workbook." type="5" refreshedVersion="7" background="1" saveData="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=ionian;Extended Properties=&quot;&quot;" command="SELECT * FROM [ionian]" />
+</connection>
+<connection id="4" xr16:uid="{00000000-0015-0000-FFFF-FFFF03000000}" keepAlive="1" name="Query - json" description="Connection to the 'json' query in the workbook." type="5" refreshedVersion="0" background="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=json;Extended Properties=&quot;&quot;" command="SELECT * FROM [json]" />
+</connection>
+<connection id="5" xr16:uid="{00000000-0015-0000-FFFF-FFFF04000000}" keepAlive="1" name="Query - Major and minor scalesEdit" description="Connection to the 'Major and minor scalesEdit' query in the workbook." type="5" refreshedVersion="7" background="1" saveData="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=&quot;Major and minor scalesEdit&quot;;Extended Properties=&quot;&quot;" command="SELECT * FROM [Major and minor scalesEdit]" />
+</connection>
+<connection id="6" xr16:uid="{00000000-0015-0000-FFFF-FFFF05000000}" keepAlive="1" name="Query - Major and minor scalesEdit (2)" description="Connection to the 'Major and minor scalesEdit (2)' query in the workbook." type="5" refreshedVersion="7" background="1" saveData="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=&quot;Major and minor scalesEdit (2)&quot;;Extended Properties=&quot;&quot;" command="SELECT * FROM [Major and minor scalesEdit (2)]" />
+</connection>
+
+<connection id="7" xr16:uid="{00000000-0015-0000-FFFF-FFFF06000000}" keepAlive="1" name="Query - Merge1" description="Connection to the 'Merge1' query in the workbook." type="5" refreshedVersion="7" background="1" saveData="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=Merge1;Extended Properties=&quot;&quot;" command="SELECT * FROM [Merge1]" />
+</connection>
+<connection id="8" xr16:uid="{00000000-0015-0000-FFFF-FFFF07000000}" keepAlive="1" name="Query - modal-tables" description="Connection to the 'modal-tables' query in the workbook." type="5" refreshedVersion="7" background="1" saveData="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=modal-tables;Extended Properties=&quot;&quot;" command="SELECT * FROM [modal-tables]" />
+</connection>
+<connection id="9" xr16:uid="{00000000-0015-0000-FFFF-FFFF08000000}" keepAlive="1" name="Query - Musical Scales with the notes: C D E G B" description="Connection to the 'Musical Scales with the notes: C D E G B' query in the workbook." type="5" refreshedVersion="7" background="1" saveData="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=&quot;Musical Scales with the notes: C D E G B&quot;;Extended Properties=&quot;&quot;" command="SELECT * FROM [Musical Scales with the notes: C D E G B]" />
+</connection>
+<connection id="10" xr16:uid="{00000000-0015-0000-FFFF-FFFF09000000}" keepAlive="1" name="Query - notes" description="Connection to the 'notes' query in the workbook." type="5" refreshedVersion="7" background="1" saveData="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=notes;Extended Properties=&quot;&quot;" command="SELECT * FROM [notes]" />
+</connection>
+<connection id="11" xr16:uid="{00000000-0015-0000-FFFF-FFFF0A000000}" keepAlive="1" name="Query - Scale degree namesEdit" description="Connection to the 'Scale degree namesEdit' query in the workbook." type="5" refreshedVersion="7" background="1" saveData="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=&quot;Scale degree namesEdit&quot;;Extended Properties=&quot;&quot;" command="SELECT * FROM [Scale degree namesEdit]" />
+</connection>
+<connection id="12" xr16:uid="{00000000-0015-0000-FFFF-FFFF0B000000}" keepAlive="1" name="Query - scales" description="Connection to the 'scales' query in the workbook." type="5" refreshedVersion="7" background="1" saveData="1">
+<dbPr connection="Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=scales;Extended Properties=&quot;&quot;" command="SELECT * FROM [scales]" />
+</connection>
+</connections>

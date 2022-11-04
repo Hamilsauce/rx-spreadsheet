@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<table xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="xr xr3" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3" id="5" xr:uid="{FF40E1D5-3E09-4671-AAE6-D6632C6BE1B9}" name="Major_and_minor_scalesEdit" displayName="Major_and_minor_scalesEdit" ref="A1:P5" tableType="queryTable" totalsRowShown="0">
+
+  <autoFilter ref="A1:P5" xr:uid="{FF40E1D5-3E09-4671-AAE6-D6632C6BE1B9}" />
+  <tableColumns count="16">
+    <tableColumn id="1" xr3:uid="{A689B599-F1AA-436C-9876-E618898554EF}" uniqueName="1" name="Column1" queryTableFieldId="1" dataDxfId="17" />
+    <tableColumn id="2" xr3:uid="{8DB1409F-8F98-4A0B-A5B0-37F0081EF953}" uniqueName="2" name="Column2" queryTableFieldId="2" dataDxfId="16" />
+    <tableColumn id="3" xr3:uid="{7C461DCC-F81D-4D0E-B320-A55DA7668214}" uniqueName="3" name="Column3" queryTableFieldId="3" dataDxfId="15" />
+    <tableColumn id="4" xr3:uid="{E97AC6D2-7AC3-41D4-B4F2-7D186BEBDD79}" uniqueName="4" name="Column4" queryTableFieldId="4" dataDxfId="14" />
+    <tableColumn id="5" xr3:uid="{198FC5A8-805E-48E8-99ED-AAD9C064E5D6}" uniqueName="5" name="Column5" queryTableFieldId="5" dataDxfId="13" />
+    <tableColumn id="6" xr3:uid="{DD679AE7-4C6B-4394-A12A-DDB0FEFB01AA}" uniqueName="6" name="Column6" queryTableFieldId="6" dataDxfId="12" />
+    <tableColumn id="7" xr3:uid="{7733A181-7903-462C-9B19-F735C720923A}" uniqueName="7" name="Column7" queryTableFieldId="7" dataDxfId="11" />
+    <tableColumn id="8" xr3:uid="{3839AA2E-D8F1-411D-B9FB-6FBF915A954D}" uniqueName="8" name="Column8" queryTableFieldId="8" dataDxfId="10" />
+    <tableColumn id="9" xr3:uid="{F8428CC9-60FA-41B8-82E4-0EE4A8099705}" uniqueName="9" name="Column9" queryTableFieldId="9" dataDxfId="9" />
+    <tableColumn id="10" xr3:uid="{C9DD9E06-EB3C-49F8-9F54-DA0493D0CAF0}" uniqueName="10" name="Column10" queryTableFieldId="10" dataDxfId="8" />
+    <tableColumn id="11" xr3:uid="{1C44CF65-6916-494B-8F5E-71CA93CE8055}" uniqueName="11" name="Column11" queryTableFieldId="11" dataDxfId="7" />
+    <tableColumn id="12" xr3:uid="{BA2EE488-6DA8-4B76-92E0-E3225F295F95}" uniqueName="12" name="Column12" queryTableFieldId="12" dataDxfId="6" />
+    <tableColumn id="13" xr3:uid="{A0B112E7-A374-4264-A6FF-8054C7B50D97}" uniqueName="13" name="Column13" queryTableFieldId="13" dataDxfId="5" />
+    <tableColumn id="14" xr3:uid="{06BF1525-E9DF-4DC2-8173-B127817DB83D}" uniqueName="14" name="Column14" queryTableFieldId="14" dataDxfId="4" />
+    <tableColumn id="15" xr3:uid="{3265A871-FCC3-4795-A214-82D821AEFCD5}" uniqueName="15" name="Column15" queryTableFieldId="15" dataDxfId="3" />
+    <tableColumn id="16" xr3:uid="{8C8B563E-EFB1-4FC0-A38A-63336DB6FB85}" uniqueName="16" name="Column16" queryTableFieldId="16" dataDxfId="2" />
+  </tableColumns>
+  <tableStyleInfo name="TableStyleMedium7" showFirstColumn="0" showLastColumn="0" showRowStripes="1" showColumnStripes="0" />
+</table>

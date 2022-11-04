@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="207" uniqueCount="103">
+<si>
+<t>Index</t>
+</si>
+<si>
+<t>Scale</t>
+</si>
+<si>
+<t>A aeolian</t>
+</si>
+<si>
+<t>A</t>
+</si>
+<si>
+<t>B</t>
+</si>
+<si>
+<t>C</t>
+</si>
+<si>
+<t>D</t>
+</si>
+<si>
+<t>E</t>
+</si>
+<si>
+<t>F</t>
+</si>
+<si>
+<t>G</t>
+</si>
+<si>
+<t>A dorian</t>
+</si>
+<si>
+<t>A natural minor</t>
+</si>
+<si>
+<t>B locrian</t>
+</si>
+<si>
+<t>B phrygian</t>
+</si>
+<si>
+<t>C ionian</t>
+</si>
+<si>
+<t>C lydian</t>
+</si>
+<si>
+<t>C major</t>
+</si>
+<si>
+<t>D dorian</t>
+</si>
+<si>
+<t>D mixolydian</t>
+</si>
+<si>
+<t>E aeolian</t>
+</si>
+<si>
+<t>E natural minor</t>
+</si>
+<si>
+<t>E phrygian</t>
+</si>
+<si>
+<t>F lydian</t>
+</si>
+<si>
+<t>F#/Gb locrian</t>
+</si>
+<si>
+<t>G ionian</t>
+</si>
+<si>
+<t>G major</t>
+</si>
+<si>
+<t>G mixolydian</t>
+</si>
+<si>
+<t>Musical Scales with the notes: C D E G B</t>
+</si>
+<si>
+<t>[{"Index":16,"Scale":"A aeolian","0":"A","1":"B","2":"C","3":"D","4":"E","5":"F","6":"G","7":"A"},{"Index":8,"Scale":"A dorian","0":"A","1":"B","2":"C","3":"D","4":"E","5":"F#\/Gb","6":"G","7":"A"},{"Index":6,"Scale":"A natural minor","0":"A","1":"B","2":"C","3":"D","4":"E","5":"F","6":"G","7":"A"},{"Index":18,"Scale":"B locrian","0":"B","1":"C","2":"D","3":"E","4":"F","5":"G","6":"A","7":"B"},{"Index":10,"Scale":"B phrygian","0":"B","1":"C","2":"D","3":"E","4":"F#\/Gb","5":"G","6":"A","7":"B"},{"Index":3,"Scale":"C ionian","0":"C","1":"D","2":"E","3":"F","4":"G","5":"A","6":"B","7":"C"},{"Index":11,"Scale":"C lydian","0":"C","1":"D","2":"E","3":"F#\/Gb","4":"G","5":"A","6":"B","7":"C"},{"Index":1,"Scale":"C major","0":"C","1":"D","2":"E","3":"F","4":"G","5":"A","6":"B","7":"C"},{"Index":7,"Scale":"D dorian","0":"D","1":"E","2":"F","3":"G","4":"A","5":"B","6":"C","7":"D"},{"Index":13,"Scale":"D mixolydian","0":"D","1":"E","2":"F#\/Gb","3":"G","4":"A","5":"B","6":"C","7":"D"},{"Index":15,"Scale":"E aeolian","0":"E","1":"F#\/Gb","2":"G","3":"A","4":"B","5":"C","6":"D","7":"E"},{"Index":5,"Scale":"E natural minor","0":"E","1":"F#\/Gb","2":"G","3":"A","4":"B","5":"C","6":"D","7":"E"},{"Index":9,"Scale":"E phrygian","0":"E","1":"F","2":"G","3":"A","4":"B","5":"C","6":"D","7":"E"},{"Index":12,"Scale":"F lydian","0":"F","1":"G","2":"A","3":"B","4":"C","5":"D","6":"E","7":"F"},{"Index":17,"Scale":"F#\/Gb locrian","0":"F#\/Gb","1":"G","2":"A","3":"B","4":"C","5":"D","6":"E","7":"F#\/Gb"},{"Index":4,"Scale":"G ionian","0":"G","1":"A","2":"B","3":"C","4":"D","5":"E","6":"F#\/Gb","7":"G"},{"Index":2,"Scale":"G major","0":"G","1":"A","2":"B","3":"C","4":"D","5":"E","6":"F#\/Gb","7":"G"},{"Index":14,"Scale":"G mixolydian","0":"G","1":"A","2":"B","3":"C","4":"D","5":"E","6":"F","7":"G"}]</t>
+</si>
+<si>
+<t>Scale degree namesEdit</t>
+</si>
+<si>
+<t>[{"Degree":1,"name":"Tonic","correspondingMajorKeyMode":"Ionian","correspondingMinorKeyMode":"Aeolian","meaning":"Tonal center, note of final resolution","noteInCMajor":"C","noteInCMinor":"C","semitones":"0"},{"Degree":2,"name":"Supertonic","correspondingMajorKeyMode":"Dorian","correspondingMinorKeyMode":"Locrian","meaning":"One whole step above the tonic","noteInCMajor":"D","noteInCMinor":"D","semitones":"2"},{"Degree":3,"name":"Mediant","correspondingMajorKeyMode":"Phrygian","correspondingMinorKeyMode":"Ionian","meaning":"Midway between tonic and dominant, (in minor key) root of relative major key","noteInCMajor":"E","noteInCMinor":"E\u266d","semitones":"3-4"},{"Degree":4,"name":"Subdominant","correspondingMajorKeyMode":"Lydian","correspondingMinorKeyMode":"Dorian","meaning":"Lower dominant, same interval below tonic as dominant is above tonic","noteInCMajor":"F","noteInCMinor":"F","semitones":"5"},{"Degree":5,"name":"Dominant","correspondingMajorKeyMode":"Mixolydian","correspondingMinorKeyMode":"Phrygian","meaning":"Second in importance to the tonic","noteInCMajor":"G","noteInCMinor":"G","semitones":"7"},{"Degree":6,"name":"Submediant","correspondingMajorKeyMode":"Aeolian","correspondingMinorKeyMode":"Lydian","meaning":"Lower mediant, midway between tonic and subdominant, (in major key) root of relative minor key","noteInCMajor":"A","noteInCMinor":"A\u266d","semitones":"8-9"},{"Degree":7,"name":"Subtonic (in the natural minor scale)","correspondingMajorKeyMode":null,"correspondingMinorKeyMode":"Mixolydian","meaning":"One whole step below tonic in natural minor scale.","noteInCMajor":null,"noteInCMinor":"B\u266d","semitones":"10"},{"Degree":7,"name":"Leading tone (in the major scale)","correspondingMajorKeyMode":"Locrian","correspondingMinorKeyMode":null,"meaning":"One half step below tonic. Melodically strong affinity for and leads to tonic","noteInCMajor":"B","noteInCMinor":null,"semitones":"11"},{"Degree":1,"name":"Tonic (octave)","correspondingMajorKeyMode":"Ionian","correspondingMinorKeyMode":"Aeolian","meaning":"Tonal center, note of final resolution","noteInCMajor":"C","noteInCMinor":"C","semitones":"12"}]</t>
+</si>
+<si>
+<t>Column1</t>
+</si>
+<si>
+<t>Column2</t>
+</si>
+<si>
+<t>Column3</t>
+</si>
+<si>
+<t>Column4</t>
+</si>
+<si>
+<t>Column5</t>
+</si>
+<si>
+<t>Column6</t>
+</si>
+<si>
+<t>Column7</t>
+</si>
+<si>
+<t>Column8</t>
+</si>
+<si>
+<t>Column9</t>
+</si>
+<si>
+<t>Column10</t>
+</si>
+<si>
+<t>Column11</t>
+</si>
+<si>
+<t>Column12</t>
+</si>
+<si>
+<t>Column13</t>
+</si>
+<si>
+<t>Column14</t>
+</si>
+<si>
+<t>Column15</t>
+</si>
+<si>
+<t>Column16</t>
+</si>
+<si>
+<t>Tonic</t>
+</si>
+<si>
+<t>Subtonic</t>
+</si>
+<si>
+<t>Supertonic</t>
+</si>
+<si>
+<t>Submediant</t>
+</si>
+<si>
+<t>Mediant</t>
+</si>
+<si>
+<t>Subdominant</t>
+</si>
+<si>
+<t>Dominant</t>
+</si>
+<si>
+<t>modal-tables</t>
+</si>
+<si>
+<t>[{"ionian_i":[{"naturalNotes":"C","intervalFromC":"P1","index":1},{"naturalNotes":"D","intervalFromC":"M2","index":2},{"naturalNotes":"E","intervalFromC":"M3","index":3},{"naturalNotes":"F","intervalFromC":"P4","index":4},{"naturalNotes":"G","intervalFromC":"P5","index":5},{"naturalNotes":"A","intervalFromC":"M6","index":6},{"naturalNotes":"B","intervalFromC":"M7","index":7},{"naturalNotes":"C","intervalFromC":"P8","index":8}],"dorian_ii":[{"naturalNotes":"D","intervalFromD":"P1","index":1},{"naturalNotes":"E","intervalFromD":"M2","index":2},{"naturalNotes":"F","intervalFromD":"m3","index":3},{"naturalNotes":"G","intervalFromD":"P4","index":4},{"naturalNotes":"A","intervalFromD":"P5","index":5},{"naturalNotes":"B","intervalFromD":"M6","index":6},{"naturalNotes":"C","intervalFromD":"m7","index":7},{"naturalNotes":"D","intervalFromD":"P8","index":8}],"phrygian_iii":[{"naturalNotes":"E","intervalFromE":"P1","index":1},{"naturalNotes":"F","intervalFromE":"m2","index":2},{"naturalNotes":"G","intervalFromE":"m3","index":3},{"naturalNotes":"A","intervalFromE":"P4","index":4},{"naturalNotes":"B","intervalFromE":"P5","index":5},{"naturalNotes":"C","intervalFromE":"m6","index":6},{"naturalNotes":"D","intervalFromE":"m7","index":7},{"naturalNotes":"E","intervalFromE":"P8","index":8}],"lydian_iv":[{"naturalNotes":"F","intervalFromF":"P1","index":1},{"naturalNotes":"G","intervalFromF":"M2","index":2},{"naturalNotes":"A","intervalFromF":"M3","index":3},{"naturalNotes":"B","intervalFromF":"A4","index":4},{"naturalNotes":"C","intervalFromF":"P5","index":5},{"naturalNotes":"D","intervalFromF":"M6","index":6},{"naturalNotes":"E","intervalFromF":"M7","index":7},{"naturalNotes":"F","intervalFromF":"P8","index":8}],"mixolydian_v":[{"naturalNotes":"G","intervalFromG":"P1","index":1},{"naturalNotes":"A","intervalFromG":"M2","index":2},{"naturalNotes":"B","intervalFromG":"M3","index":3},{"naturalNotes":"C","intervalFromG":"P4","index":4},{"naturalNotes":"D","intervalFromG":"P5","index":5},{"naturalNotes":"E","intervalFromG":"M6","index":6},{"naturalNotes":"F","intervalFromG":"m7","index":7},{"naturalNotes":"G","intervalFromG":"P8","index":8}],"aeolian_vi":[{"naturalNotes":"A","intervalFromA":"P1","index":1},{"naturalNotes":"B","intervalFromA":"M2","index":2},{"naturalNotes":"C","intervalFromA":"m3","index":3},{"naturalNotes":"D","intervalFromA":"P4","index":4},{"naturalNotes":"E","intervalFromA":"P5","index":5},{"naturalNotes":"F","intervalFromA":"m6","index":6},{"naturalNotes":"G","intervalFromA":"m7","index":7},{"naturalNotes":"A","intervalFromA":"P8","index":8}],"locrian_vii":[{"naturalNotes":"B","intervalFromB":"P1","index":1},{"naturalNotes":"C","intervalFromB":"m2","index":2},{"naturalNotes":"D","intervalFromB":"m3","index":3},{"naturalNotes":"E","intervalFromB":"P4","index":4},{"naturalNotes":"F","intervalFromB":"d5","index":5},{"naturalNotes":"G","intervalFromB":"m6","index":6},{"naturalNotes":"A","intervalFromB":"m7","index":7},{"naturalNotes":"B","intervalFromB":"P8","index":8}]},{"ionian_i":2,"dorian_ii":3,"phrygian_iii":4,"lydian_iv":5,"mixolydian_v":6,"aeolian_vi":7,"locrian_vii":8}]</t>
+</si>
+<si>
+<t>ionian</t>
+</si>
+<si>
+<t>[{"naturalNote":"intervalFromC","C":"P1","D":"M2","E":"M3","F":"P4","G":"P5","A":"M6","B":"M7","C_1":"P8"}]</t>
+</si>
+<si>
+<t>Caption</t>
+</si>
+<si>
+<t>Source</t>
+</si>
+<si>
+<t>ClassName</t>
+</si>
+<si>
+<t>Id</t>
+</si>
+<si>
+<t>Ionian (I)Edit</t>
+</si>
+<si>
+<t>Table</t>
+</si>
+<si>
+<t>wikitable</t>
+</si>
+<si>
+<t>Dorian (II)Edit</t>
+</si>
+<si>
+<t>Phrygian (III)Edit</t>
+</si>
+<si>
+<t>Lydian (IV)Edit</t>
+</si>
+<si>
+<t>Mixolydian (V)Edit</t>
+</si>
+<si>
+<t>Aeolian (VI)Edit</t>
+</si>
+<si>
+<t>Locrian (VII)Edit</t>
+</si>
+<si>
+<t>Mode</t>
+</si>
+<si>
+<t>White note</t>
+</si>
+<si>
+<t>Intervals with respect to the tonic unison</t>
+</si>
+<si>
+<t>Intervals with respect to the tonic second</t>
+</si>
+<si>
+<t>Intervals with respect to the tonic third</t>
+</si>
+<si>
+<t>Intervals with respect to the tonic fourth</t>
+</si>
+<si>
+<t>Intervals with respect to the tonic fifth</t>
+</si>
+<si>
+<t>Intervals with respect to the tonic sixth</t>
+</si>
+<si>
+<t>Intervals with respect to the tonic seventh</t>
+</si>
+<si>
+<t>Intervals with respect to the tonic octave</t>
+</si>
+<si>
+<t>White_x000D_
+note</t>
+</si>
+<si>
+<t>Intervals with respect to the tonic</t>
+</si>
+<si>
+<t>unison</t>
+</si>
+<si>
+<t>second</t>
+</si>
+<si>
+<t>third</t>
+</si>
+<si>
+<t>fourth</t>
+</si>
+<si>
+<t>fifth</t>
+</si>
+<si>
+<t>sixth</t>
+</si>
+<si>
+<t>seventh</t>
+</si>
+<si>
+<t>octave</t>
+</si>
+<si>
+<t>Lydian</t>
+</si>
+<si>
+<t>perfect</t>
+</si>
+<si>
+<t>major</t>
+</si>
+<si>
+<t>augmented</t>
+</si>
+<si>
+<t>Ionian</t>
+</si>
+<si>
+<t>Mixolydian</t>
+</si>
+<si>
+<t>minor</t>
+</si>
+<si>
+<t>Dorian</t>
+</si>
+<si>
+<t>Aeolian</t>
+</si>
+<si>
+<t>Phrygian</t>
+</si>
+<si>
+<t>Locrian</t>
+</si>
+<si>
+<t>diminished</t>
+</si>
+</sst>
