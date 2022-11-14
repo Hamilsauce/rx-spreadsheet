@@ -6,6 +6,7 @@ const { fromFetch } = rxjs.fetch;
 export class Cell extends Component {
   #self = null;
   #value = null;
+  #isActive = false;
   #formula = null;
   #address = { r: null, c: null }
   #stateSubject = new BehaviorSubject(null);

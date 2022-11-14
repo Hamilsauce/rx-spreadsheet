@@ -25,6 +25,8 @@ export class Component extends EventEmitter {
 
   render() { return this.self }
 
+  create() {}
+
   addCollection(type = 'default', entries = []) {
     if (!type) throw new Error('Must give new collection a type');
     if (this[type]) throw new Error('Collection of type already exists on component - this.#type, type: ', this.#type, type);

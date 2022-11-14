@@ -22,7 +22,7 @@ let targetIndexes = [0, 200, 300]
 
 const sheetValues$ = sheetValueSubject$.asObservable()
   .pipe(
-    distinctUntilChanged(),
+    // distinctUntilChanged(),
     filter(cell => cell.address),
     groupBy(cell => cell.address),
     filter(cellgroup => cellgroup.key === 'A2'),
@@ -54,7 +54,7 @@ export class SheetModel {
   #columnNames = [];
   #sheetValueSubject$ = new BehaviorSubject({}).pipe(
     scan((prev, { address, model }) => ({ ...prev || {}, ...(model || {}) })),
-    distinctUntilChanged(),
+    // distinctUntilChanged(),
     filter(cell => cell.address),
     groupBy(cell => cell.address),
   );
@@ -76,13 +76,13 @@ export class SheetModel {
 
     setTimeout(() => {
       // console.log('pushing value A1 2', );
-      this.#sheetValueSubject$.next({ address: 'A1', model: { value: 'FUCK' } })
+      this.#sheetValueSubject$.next({ address: 'A1', model: { value: 'SUCK' } })
 
     }, 1000)
 
     setTimeout(() => {
       // console.log('pushing value B2', );
-      this.#sheetValueSubject$.next({ address: 'B1', model: { value: 'sUCK' } })
+      this.#sheetValueSubject$.next({ address: 'A1', model: { value: 'CUCK' } })
 
     }, 200)
     
@@ -101,6 +101,7 @@ export class SheetModel {
   }
 
   insertCell(address, model) {
+    // console.log('address, model', address, model)
     this.#cells.set(address, model)
     sheetValueSubject$.next({ address, model })
   }

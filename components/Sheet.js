@@ -1,5 +1,6 @@
 import { Component } from './Component.js';
 import { Cell } from './Cell.js';
+
 const { forkJoin, Observable, iif, BehaviorSubject, AsyncSubject, Subject, interval, of , fromEvent, merge, empty, delay, from } = rxjs;
 const { flatMap, reduce, groupBy, toArray, mergeMap, switchMap, scan, map, tap, filter } = rxjs.operators;
 const { fromFetch } = rxjs.fetch;
@@ -10,20 +11,35 @@ export const range = (start, stop) => {
     .map((v, i) => start + i);
 }
 
+// const range1 = range(0, 50)
+// console.log('range1', range1)
+
+export const DEFAULT_SHEET_OPTIONS = {
+  width: 50,
+  height: 50,
+  cellSize: {
+    width: 90,
+    height: 30,
+  }
+}
+
 
 export class Sheet extends Component {
-  // #self = null;
+  #self = null;
   #cells = [];
-  #value = [];
+  #isActive = false;
+  #value = null;
   #formula = null;
   #address = { r: null, c: null }
   #stateSubject = new BehaviorSubject(null);
 
-  constructor(rowCount, columnCount) {
+  constructor(options) {
     super('sheet');
+    const { height, width, cellSize } = options ? options : DEFAULT_SHEET_OPTIONS
+    console.log('height, width, cellSize', height, width, cellSize)
+    // const newCol = Cell.createCell({ c: 6, r: 6 })
 
-    const newCol = Cell.createCell({ c: 6, r: 6 })
-    this.#cells = this.buildCells.bind(this)(rowCount, columnCount)
+    this.#cells = this.buildCells.bind(this)(height, width)
 
     // merge(
     //   fromEvent(this.self, 'click').pipe(
@@ -40,6 +56,15 @@ export class Sheet extends Component {
     //   ),
     // ).subscribe()
   };
+
+  setSize(width, height, cellSizel) {
+    this.body.style.gridTemplateRows = `repeat(${height}, ${cellSizel.height}px)`
+    this.body.style.gridTemplateColumns = `repeat(${width}, ${cellSizel.width}px)`
+    this.columnHeaders.style.gridTemplateColumns = `repeat(${width}, ${cellSizel.width}px)`
+    this.rowHeaders.style.gridTemplateRows = `repeat(${height}, ${cellSizel.height}px)`
+   
+    return this;
+  }
 
   createCell({ r, c }) {
     return Cell.createCell({ r, c })
@@ -84,9 +109,11 @@ export class Sheet extends Component {
     this.self.addEventListener('blur', this.handleBlur)
   }
 
-  // get value() { return this.#value }
+  get html() { return this.self }
+ 
+  get body() { return this.self.querySelector('.cellgroup[data-area="body"') }
 
-  get formula() { return this.#formula || this.#value }
+  get columnHeaders() { return this.self.querySelector('.cellgroup[data-area="hrow"') }
 
-  get address() { return this.#address }
+  get rowHeaders() { return this.self.querySelector('.cellgroup[data-area="hcol"') }
 }

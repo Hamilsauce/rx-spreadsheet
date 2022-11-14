@@ -1,31 +1,45 @@
-import { APP_OBJECT_TYPES } from './lib/app-objects.type.js';
+import { AppObjectTypes } from './lib/app-objects.type.js';
 import { Collection } from './lib/collection.js';
 const { forkJoin, Observable, iif, BehaviorSubject, AsyncSubject, Subject, interval, of , fromEvent, merge, empty, delay, from } = rxjs;
 const { flatMap, reduce, groupBy, toArray, mergeMap, switchMap, scan, map, tap, filter } = rxjs.operators;
 const { fromFetch } = rxjs.fetch;
 
+/*
+ *  @Ideas
+ *    - Cascading/Hieraechical Active Components, 
+        so:
+        1) Activate Workbook at app level
+        2) Workbook activates sheet
+        3) Sheet activstes cell
+ *
+ *
+ */
 
-export class AppObject {
+/*
+ *  @Application
+ *    - Loads top-level view components;
+ *    - Mediates Events/messages/streams 
+ *      between top-level components;
+ *    - Opens/Loads/Activates Workbook
+ */
+export class Application {
   #type;
   #name;
   #parent;
 
-  constructor(type, name, parent) {
-    if (!type) return;
+  constructor() {
+    // if (!type) return;
 
-    this.#type = type;
+    // this.#type = type;
 
-    this.#name = !!name ? name : null;
+    // this.#name = !!name ? name : null;
 
-    this.#parent = !!parent ? parent : null;
+    // this.#parent = !!parent ? parent : null;
   }
 
-  activate() {}
+  openBook(name) {}
 
-  create() {}
-  
-  select() {}
-
+  createBook(name) {}
 
   get type() { return this.#type };
 
@@ -39,11 +53,11 @@ export class AppObject {
 
 
 
-export class App extends AppObject {
+export class App extends Application {
   #workbooks = new Collection('workbook')
 
   constructor() {
-    super(APP_OBJECT_TYPES.app);
+    super(AppObjectTypes.app);
   }
 
   createObject(type) {}
