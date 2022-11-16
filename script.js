@@ -5,11 +5,12 @@ import { template } from './lib/templater.js';
 import { Sheet } from './components/Sheet.js';
 import { getCellAddress } from './lib/cell-addresser.js';
 import { SheetModel } from './models/sheet.model.js';
-import { App } from './App.js';
+import { Application } from './App.js';
 import { DEFAULT_SHEET_OPTIONS } from './components/Sheet.js';
 const { forkJoin, Observable, iif, BehaviorSubject, AsyncSubject, Subject, interval, of , fromEvent, merge, empty, delay, from } = rxjs;
 const { distinctUntilChanged, flatMap, reduce, groupBy, toArray, mergeMap, switchMap, scan, map, tap, filter } = rxjs.operators;
 const { fromFetch } = rxjs.fetch;
+
 
 
 const alphabet = utils.alphabet();
@@ -25,6 +26,22 @@ const sheetOverlay = sheet.querySelector('.sheet-overlay')
 const gridBody = sheet.querySelector('.cellgroup[data-area=body]')
 const columnHeaders = sheet.querySelector('.cellgroup[data-area=hrow]')
 const rowHeaders = sheet.querySelector('.cellgroup[data-area=hcol]')
+
+
+// setTimeout(() => {
+//   let gridCols = gridBody.style.gridTemplateColumns
+ 
+// let test1 = 'replace(61235, 90px)'
+// let regex1 = /replace\((\d)\,/i;
+// let regex2 = /##replace\(\d*\,/
+//   let ccount = gridCols.match(/Java(Script)/g)
+//   let ccount1 = test1.match(/\d+/)
+  
+//   console.log('ccount1', ccount1)
+//   console.log('gridBody.style.gridTemplateColumns',
+//   gridBody.style.gridTemplateColumns
+//   );
+// }, 1000)
 
 
 const createCell = ({ address, col, row, content, dataType }) => {
@@ -73,18 +90,18 @@ const cells = (filter) => [...sheet.querySelectorAll('.cell')]
 
 const activeCells = (filter) => cells().filter((c, i) => c.dataset.active === 'true') || [];
 
-let cellFrag = new DocumentFragment();
 
 const hcols = (filter) => [...document.querySelector('.cellgroup[data-area=hcol]').children]
 const hrows = (filter) => [...document.querySelector('.cellgroup[data-area=hrow]').children]
 
 const dims = { ccount: hrows().length, rcount: hcols().length };
 
+let cellFrag = new DocumentFragment();
 gridBody.style.gridTemplateRows = `repeat(${dims.rcount}, ${30}px)`
 gridBody.style.gridTemplateColumns = `repeat(${dims.ccount}, ${90}px)`
 
-const application = new App();
-
+const application = new Application();
+console.log('application', application)
 const sheetModel = new SheetModel(dims.rcount, dims.ccount)
 const sheetView = new Sheet(DEFAULT_SHEET_OPTIONS)
 
@@ -291,24 +308,44 @@ const activeCell$ = fromEvent(gridBody, 'click').pipe(
   )
 ).subscribe();
 
-const columnSelection$ = fromEvent(columnHeaders, 'click').pipe(
-  map(e => e.target.closest('.cell').textContent.trim()),
-  // distinctUntilChanged(),
-  tap(x => console.log('x', x)),
-  filter(_ => _),
-  map(columnName => {
-    const col = [...gridBody.querySelectorAll(`.cell`)]
-      .filter((c, i) => {
-        // const tileCol = c.dataset.address.replace((/^[A-Za-z]+$/), '') //=== columnName
+const columnSelection$ = fromEvent(columnHeaders, 'click')
+  .pipe(
+    map(e => e.target.closest('.cell').textContent.trim()),
+    filter(_ => _),
+    map(columnName => {
+      const col = [...gridBody.querySelectorAll(`.cell`)].filter((c, i) => {
         return c.dataset.address.replace(/[^a-zA-Z]+/g, '') === columnName
       });
-    console.log('col', col)
-    return col;
-  }),
-  tap(colCells => {
-    colCells.forEach(c => c.dataset.selected = c.dataset.selected === 'true' ? false : true)
-  }),
-).subscribe();
+      return col;
+    }),
+    tap(colCells => {
+      colCells.forEach(c => c.dataset.selected = c.dataset.selected === 'true' ? false : true)
+    }),
+  )
+// .subscribe();
+
+const rowSelection$ = fromEvent(rowHeaders, 'click')
+  .pipe(
+    map(e => e.target.closest('.cell').textContent.trim()),
+    filter(_ => _),
+    map(rowName => {
+      const row = [...gridBody.querySelectorAll(`.cell`)]
+        .filter((r, i) => {
+          return r.dataset.address.replace(/\D+/, '') === rowName
+        });
+
+      return row;
+    }),
+    tap(rowCells => {
+      rowCells.forEach(r => r.dataset.selected = r.dataset.selected === 'true' ? false : true)
+    }))
+
+merge(
+    columnSelection$,
+    rowSelection$
+  )
+  .subscribe();
+
 
 gridBody.innerHTML = '';
 gridBody.append(cellFrag)

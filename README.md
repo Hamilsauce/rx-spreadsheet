@@ -2,9 +2,17 @@
 
 ## OBJECT MODEL
 
-  - App
+  - Application
     - Workbooks<Collection>
     - ActiveBook<Workbook>
+
+  - Workbook
+    - WorkSheets<Collection>
+    - ActiveSheet<WorSheet>
+
+  - Worksheet
+    - Cells<Collection>
+    - ActiveSheet<WorSheet>
 
 
 

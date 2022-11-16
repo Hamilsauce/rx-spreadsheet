@@ -57,12 +57,60 @@ export class Sheet extends Component {
     // ).subscribe()
   };
 
+
+  createCell({ address, col, row, content, dataType }) {
+    const c = document.createElement('div');
+
+    c.classList.add('cell');
+    c.draggable = true
+    c.dataset.col = col;
+    c.dataset.row = row;
+    c.dataset.address = address;
+    c.dataset.dataType = dataType || 'string';
+    c.textContent = content ? content : ''
+
+    return c;
+  }
+
+  insertRow() {
+    const c = document.createElement('div');
+
+    c.classList.add('cell');
+    c.draggable = true
+    c.dataset.col = col;
+    c.dataset.row = row;
+    c.dataset.address = address;
+    c.dataset.dataType = dataType || 'string';
+    c.textContent = content ? content : ''
+
+    return c;
+  }
+
+  insertColumn({ address, col, row, content, dataType }) {
+    const c = document.createElement('div');
+
+    c.classList.add('cell');
+    c.draggable = true
+    c.dataset.col = col;
+    c.dataset.row = row;
+    c.dataset.address = address;
+    c.dataset.dataType = dataType || 'string';
+    c.textContent = content ? content : ''
+
+    return c;
+  }
+
+  cells(filter) {
+    return [...sheet.querySelectorAll('.cell')];
+  }
+
+
   setSize(width, height, cellSizel) {
     this.body.style.gridTemplateRows = `repeat(${height}, ${cellSizel.height}px)`
     this.body.style.gridTemplateColumns = `repeat(${width}, ${cellSizel.width}px)`
     this.columnHeaders.style.gridTemplateColumns = `repeat(${width}, ${cellSizel.width}px)`
     this.rowHeaders.style.gridTemplateRows = `repeat(${height}, ${cellSizel.height}px)`
-   
+
     return this;
   }
 
@@ -108,12 +156,27 @@ export class Sheet extends Component {
     this.handleBlur = this.#onBlur.bind(this)
     this.self.addEventListener('blur', this.handleBlur)
   }
+  
+  set width(v) {
+    this.bo
+  }
+
+  get dims() {
+    return {
+      columns: this.columnHeaders.length,
+      rows: this.rowHeaders.length,
+    }
+  }
+
+  get activeCell() {
+    return this.cells().filter((c, i) => c.dataset.active === 'true') || [];
+  }
 
   get html() { return this.self }
- 
+
   get body() { return this.self.querySelector('.cellgroup[data-area="body"') }
 
-  get columnHeaders() { return this.self.querySelector('.cellgroup[data-area="hrow"') }
+  get columnHeaders() { return [this.self.querySelector('.cellgroup[data-area="hrow"').children] }
 
-  get rowHeaders() { return this.self.querySelector('.cellgroup[data-area="hcol"') }
+  get rowHeaders() { return [this.self.querySelector('.cellgroup[data-area="hcol"').children] }
 }

@@ -1,5 +1,8 @@
-import { AppObjectTypes } from './lib/app-objects.type.js';
+import { Component } from './components/Component.js';
+// import { AppObjectTypes } from './lib/app-objects.type.js';
 import { Collection } from './lib/collection.js';
+
+
 const { forkJoin, Observable, iif, BehaviorSubject, AsyncSubject, Subject, interval, of , fromEvent, merge, empty, delay, from } = rxjs;
 const { flatMap, reduce, groupBy, toArray, mergeMap, switchMap, scan, map, tap, filter } = rxjs.operators;
 const { fromFetch } = rxjs.fetch;
@@ -22,28 +25,33 @@ const { fromFetch } = rxjs.fetch;
  *      between top-level components;
  *    - Opens/Loads/Activates Workbook
  */
-export class Application {
-  #type;
-  #name;
+export class Application extends Component {
   #parent;
+  #workbooks = new Collection('workbooks')
 
   constructor() {
+    super('app');
+
     // if (!type) return;
 
     // this.#type = type;
 
     // this.#name = !!name ? name : null;
 
-    // this.#parent = !!parent ? parent : null;
+    this.#parent = null;
   }
 
   openBook(name) {}
 
   createBook(name) {}
+  
+  get workbooks() { return this.#workbooks };
 
-  get type() { return this.#type };
+  // set workbooks(newValue) { this.#workbooks = newValue };
 
-  get name() { return this.#name };
+  // get type() { return this.#type };
+
+  // get name() { return this.#name };
 
   get parent() { return this.#parent };
 
@@ -53,16 +61,16 @@ export class Application {
 
 
 
-export class App extends Application {
-  #workbooks = new Collection('workbook')
+// export class App extends Application {
+//   #workbooks = new Collection('workbooks')
 
-  constructor() {
-    super(AppObjectTypes.app);
-  }
+//   constructor() {
+//     // super(AppObjectTypes.app);
+//   }
 
-  createObject(type) {}
+//   createObject(type) {}
 
-  get workbooks() { return this.#workbooks };
+//   get workbooks() { return this.#workbooks };
 
-  set workbooks(newValue) { this.#workbooks = newValue };
-}
+//   set workbooks(newValue) { this.#workbooks = newValue };
+// }

@@ -98,7 +98,6 @@
           <div class="cell"></div>
           <div class="cell"></div>
           <div class="cell"></div>
-          <div class="cell"></div>
         </div>
         <!-- <div class="range"></div> -->
 
@@ -151,21 +150,41 @@
       </div>
     </footer>
   </div>
-  
-  <template id="sheet-template">
-    <div class="sheet" id="" data-component-type="sheet" data-active="false" data-index="0">
-        <div class="cellgroup" data-area="corn"></div>
-        <div class="cellgroup" data-area="hrow"></div>
-        <div class="cellgroup" data-area="hcol"></div>
-        <div class="cellgroup" data-area="body"></div>
+
+
+  <!-- <script src="./main.js" type="module"></script> -->
+  <script src="./script.js" type="module"></script>
+
+  <template id="app-template">
+    <div id="app">
+      <section id="app-topbar"></section>
+      <section id="app-body"></section>
+      <footer id="app-footer"></footer>
     </div>
   </template>
- 
+
+  <template id="book-template">
+    <div class="sheet" id="" data-component-type="sheet" data-active="false" data-index="0">
+      <div class="cellgroup" data-area="corn"></div>
+      <div class="cellgroup" data-area="hrow"></div>
+      <div class="cellgroup" data-area="hcol"></div>
+      <div class="cellgroup" data-area="body"></div>
+    </div>
+  </template>
+
+  <template id="sheet-template">
+    <div class="sheet" id="" data-component-type="sheet" data-active="false" data-index="0">
+      <div class="cellgroup" data-area="corn"></div>
+      <div class="cellgroup" data-area="hrow"></div>
+      <div class="cellgroup" data-area="hcol"></div>
+      <div class="cellgroup" data-area="body"></div>
+    </div>
+  </template>
+
   <template id="cell-template">
     <div class="cell"></div>
   </template>
-  
-  <script src="./script.js" type="module"></script>
+
 </body>
 
 </html>
