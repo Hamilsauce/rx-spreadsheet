@@ -7,18 +7,43 @@ export class Cell extends Component {
   #self = null;
   #value = null;
   #isActive = false;
+  #isSelected = false;
   #formula = null;
-  #address = { r: null, c: null }
   #stateSubject = new BehaviorSubject(null);
 
-  constructor(r, c) {
+  constructor(column, row) {
     super('cell');
 
-    this.#address = { r, c };
+    this.#value = this.self.querySelector('.cell-value');
+
+    this.setData({
+      column: column,
+      row: row,
+      address: `${column}${row}`,
+    });
+
   };
 
-  static createCell({ r, c }) {
-    return new Cell(r, c)
+  static createCell(column, row) {
+    return new Cell(column, row)
+  }
+
+  activate(state = null) {
+    if (state === null) {
+      this.isActive = !(!!this.isActive);
+      this.isSelected = !(!!this.isSelected);
+    }
+    else {
+      this.isActive = state;
+      this.isSelected = state;
+    }
+  }
+
+  select(state = null) {
+    if (state === null) {
+      this.isSelected = !(!!this.isSelected);
+    }
+    else this.isSelected = state;
   }
 
   subscribe() {}
@@ -28,6 +53,8 @@ export class Cell extends Component {
   #onClick() {}
 
   #onBlur() {}
+
+
 
   #setEventHandlers() {
     this.handleDblClick = this.#onDblClick.bind(this)
@@ -40,13 +67,23 @@ export class Cell extends Component {
     this.self.addEventListener('blur', this.handleBlur)
   }
 
-  get value() { return this.#value }
+  get #dataset() { return this.dataset }
+
+  get value() { return this.#value.textContent || null }
+
+  set value(v) { this.#value.textContent = v }
 
   get formula() { return this.#formula || this.#value }
 
-  get address() { return this.#address }
-  
-  get isActive() { return this.#isActive  }
+  set #address(address) { this.dataset.address = address }
 
-  set isActive(v) { this.#isActive = v === true ? true : false;  }
+  get address() { return this.dataset.address }
+
+  get isActive() { return this.#dataset.active === 'true' ? true : false }
+
+  set isActive(v) { this.#dataset.active = v === true ? true : false; }
+
+  get isSelected() { return this.#dataset.selected === 'true' ? true : false }
+
+  set isSelected(v) { this.#dataset.selected = v === true ? true : false; }
 }

@@ -20,9 +20,9 @@ body {
   height: 100%;
 }
 
-#app {
+#application {
   display: grid;
-  grid-template-rows: auto 1fr 40px;
+  grid-template-rows: auto 1fr;
   grid-template-columns: 1fr;
   gap: 0px;
   width: 100%;
@@ -70,18 +70,29 @@ body {
   font-size: 14px;
 }
 
-#app-body {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+.workbook {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 40px;
+  grid-template-columns: 1fr;
   gap: 0px;
-  overflow-y: scroll;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
 
-#app-footer {
+#active-workbook {
+  display: grid;
+  grid-template-rows: 1fr 40px;
+  grid-template-columns: 1fr;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+
+/* #app-footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -89,9 +100,9 @@ body {
   gap: 0px;
   background: #E7E7E7;
   border-top: 1px solid #D1D1D1;
-}
+} */
 
-#sheet-tabs {
+#worksheet-tabs {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -102,7 +113,7 @@ body {
   padding: 2px 30px;
 }
 
-.sheet-tab {
+.worksheet-tab {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -116,12 +127,12 @@ body {
   border-radius: 3px;
 }
 
-.sheet-tab[data-active=true] {
+.worksheet-tab[data-active=true] {
   background: #CCCCCC;
 }
 
-.sheet {
-  position: relative;
+.worksheet {
+  /* position: sticky; */
   display: grid;
   grid-template-areas:
     "corn hrow"
@@ -131,7 +142,7 @@ body {
   text-align: center;
   overflow: scroll;
   scroll-snap-type: mandatory;
-  
+
   /* scroll-snap-type-x: mandatory; */
   background: #D1D1D1;
 }
@@ -158,6 +169,8 @@ body {
   grid-area: corn;
   top: 0;
   left: 0;
+  width: 30px;
+  height: 24px;
   z-index: 30;
   border: 1px solid #D1D1D1;
   background: #E7E7E7;
@@ -167,33 +180,112 @@ body {
 .cell {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 0px;
   padding: 2px 4px;
   font-size: 14px;
   font-weight: 500;
   color: #656565;
   background: #E7E7E7;
-  border: 2px solid transparent;
+  /* border: 2px solid transparent; */
+  /* overflow: hidden; */
   /* border-top: 1px solid transparent; */
   /* border-left: 1px solid transparent; */
   /* outine: none; */
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  /* padding: 2px 4px; */
+  font-size: 14px;
+  font-weight: 500;
+  color: #656565;
+  background: #E7E7E7;
+  border: 2px solid transparent;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  /* border-top: 1px solid transparent; */
+  /* border-left: 1px solid transparent; */
+  /* outine: none; */
+}
 
-.cellgroup[data-area=hrow] .cell,
-.cellgroup[data-area=hcol] .cell {
+.header-value {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  /* padding: 2px 4px; */
+  font-size: 14px;
+  font-weight: 500;
+  color: #656565;
+  background: #E7E7E7;
+  /* border: 2px solid transparent; */
+  /* overflow: hidden; */
+  width: 100%;
+  height: 100%;
+  /* border-top: 1px solid transparent; */
+  /* border-left: 1px solid transparent; */
+  /* outine: none; */
+}
+
+.cell-value {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.cell-formula {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: none;
+}
+
+.cell-input {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: none;
+}
+
+
+.cellgroup[data-area=hrow] .header,
+.cellgroup[data-area=hcol] .header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 0px;
   font-size: 13px;
+  width: 100%;
+  height: 100%;
 }
 
 .cellgroup[data-area=hrow] {
-  
+
   position: sticky;
   top: 0;
   left: 30px;
@@ -208,7 +300,7 @@ body {
   background: #D1D1D1;
   z-index: 20;
   /* scroll-snap-type: mandatory; */
-  
+
 }
 
 .cellgroup[data-area=hcol] {
@@ -237,7 +329,7 @@ body {
   /* grid-template-columns: repeat(31, 90px); */
   /* grid-template-rows: repeat(31, 30px); */
   gap: 1px;
-  
+
 }
 
 
@@ -252,11 +344,14 @@ body {
 
 .cell[data-selected=true] {
   border: 2px solid orange;
+  background: #CD0F0FA6;
+  /* /  background: #A0A0A0A6; */
   outline: none;
 }
 
 .cellgroup[data-area=body] .cell[data-active=true] {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
+  background: #A0A0A0A6;
   outline: none;
 }
 

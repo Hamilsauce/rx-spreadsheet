@@ -1,6 +1,7 @@
-import { Component } from './components/Component.js';
+import { Component } from './Component.js';
 // import { AppObjectTypes } from './lib/app-objects.type.js';
-import { Collection } from './lib/collection.js';
+import { Collection } from '../lib/collection.js';
+import { ComponentLoader } from '../lib/component-loader.js';
 
 
 const { forkJoin, Observable, iif, BehaviorSubject, AsyncSubject, Subject, interval, of , fromEvent, merge, empty, delay, from } = rxjs;
@@ -30,21 +31,28 @@ export class Application extends Component {
   #workbooks = new Collection('workbooks')
 
   constructor() {
-    super('app');
-
-    // if (!type) return;
-
-    // this.#type = type;
-
-    // this.#name = !!name ? name : null;
+    super('application');
 
     this.#parent = null;
+    ComponentLoader.loadComponents(this)
+  this.init()
+    console.log('Application in construxtor', this.components)
+  }
+
+  init() {
+    const appPlaceholder = document.querySelector('#application');
+
+    appPlaceholder.innerHTML = '';
+
+    document.body.insertBefore(this.self, appPlaceholder.remove());
   }
 
   openBook(name) {}
 
+  closeBook(name) {}
+
   createBook(name) {}
-  
+
   get workbooks() { return this.#workbooks };
 
   // set workbooks(newValue) { this.#workbooks = newValue };
@@ -57,20 +65,3 @@ export class Application extends Component {
 
   set parent(newValue) { this.#parent = newValue };
 }
-
-
-
-
-// export class App extends Application {
-//   #workbooks = new Collection('workbooks')
-
-//   constructor() {
-//     // super(AppObjectTypes.app);
-//   }
-
-//   createObject(type) {}
-
-//   get workbooks() { return this.#workbooks };
-
-//   set workbooks(newValue) { this.#workbooks = newValue };
-// }

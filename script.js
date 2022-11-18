@@ -2,11 +2,11 @@ import ham from 'https://hamilsauce.github.io/hamhelper/hamhelper1.0.0.js';
 const { download, date, array, utils, text } = ham;
 import { template } from './lib/templater.js';
 // import { Cell } from './components/Cell.js';
-import { Sheet } from './components/Sheet.js';
+import { Worksheet } from './components/Worksheet.js';
 import { getCellAddress } from './lib/cell-addresser.js';
 import { SheetModel } from './models/sheet.model.js';
-import { Application } from './App.js';
-import { DEFAULT_SHEET_OPTIONS } from './components/Sheet.js';
+import { Application } from './components/Application.js';
+import { DEFAULT_SHEET_OPTIONS } from './components/Worksheet.js';
 const { forkJoin, Observable, iif, BehaviorSubject, AsyncSubject, Subject, interval, of , fromEvent, merge, empty, delay, from } = rxjs;
 const { distinctUntilChanged, flatMap, reduce, groupBy, toArray, mergeMap, switchMap, scan, map, tap, filter } = rxjs.operators;
 const { fromFetch } = rxjs.fetch;
@@ -21,7 +21,7 @@ let rowIds = [];
 
 const app = document.querySelector('#app');
 const containers = document.querySelectorAll('.container')
-const sheet = document.querySelector('.sheet')
+const sheet = document.querySelector('.worksheet')
 const sheetOverlay = sheet.querySelector('.sheet-overlay')
 const gridBody = sheet.querySelector('.cellgroup[data-area=body]')
 const columnHeaders = sheet.querySelector('.cellgroup[data-area=hrow]')
@@ -30,13 +30,13 @@ const rowHeaders = sheet.querySelector('.cellgroup[data-area=hcol]')
 
 // setTimeout(() => {
 //   let gridCols = gridBody.style.gridTemplateColumns
- 
+
 // let test1 = 'replace(61235, 90px)'
 // let regex1 = /replace\((\d)\,/i;
 // let regex2 = /##replace\(\d*\,/
 //   let ccount = gridCols.match(/Java(Script)/g)
 //   let ccount1 = test1.match(/\d+/)
-  
+
 //   console.log('ccount1', ccount1)
 //   console.log('gridBody.style.gridTemplateColumns',
 //   gridBody.style.gridTemplateColumns
@@ -103,7 +103,7 @@ gridBody.style.gridTemplateColumns = `repeat(${dims.ccount}, ${90}px)`
 const application = new Application();
 console.log('application', application)
 const sheetModel = new SheetModel(dims.rcount, dims.ccount)
-const sheetView = new Sheet(DEFAULT_SHEET_OPTIONS)
+const sheetView = new Worksheet(DEFAULT_SHEET_OPTIONS)
 
 hrows().forEach((r, i) => {
   if (i >= 26) {
@@ -220,7 +220,7 @@ const handlePointerDown = (e) => {
   });
 
   let cell = e.target.closest('.cell');
-  let sht = e.target.closest('.sheet');
+  let sht = e.target.closest('.worksheet');
   if (!cell || !sht) return;
   const group = document.createElement('div');
   sht.style.touchAction = 'none';
@@ -318,11 +318,12 @@ const columnSelection$ = fromEvent(columnHeaders, 'click')
       });
       return col;
     }),
+ tap(x => console.warn('columnSelection$', x)),
     tap(colCells => {
       colCells.forEach(c => c.dataset.selected = c.dataset.selected === 'true' ? false : true)
     }),
   )
-// .subscribe();
+.subscribe();
 
 const rowSelection$ = fromEvent(rowHeaders, 'click')
   .pipe(
@@ -344,7 +345,7 @@ merge(
     columnSelection$,
     rowSelection$
   )
-  .subscribe();
+  // .subscribe();
 
 
 gridBody.innerHTML = '';

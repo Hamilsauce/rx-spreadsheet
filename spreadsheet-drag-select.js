@@ -39,7 +39,7 @@ let rowIds = [];
 
 const app = document.querySelector('#app');
 const containers = document.querySelectorAll('.container')
-const sheet = document.querySelector('.sheet')
+const sheet = document.querySelector('.worksheet')
 const sheetOverlay = sheet.querySelector('.sheet-overlay')
 const gridBody = sheet.querySelector('.cellgroup[data-area=body]')
 
@@ -179,7 +179,7 @@ const handlePointerDown = (e) => {
   });
 
   let cell = e.target.closest('.cell');
-  let sht = e.target.closest('.sheet');
+  let sht = e.target.closest('.worksheet');
   // console.log('handlePointerDown', { sht })
   if (!cell || !sht) return;
   // console.log('handlePointerDown 2', { sht })

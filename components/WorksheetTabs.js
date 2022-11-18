@@ -1,11 +1,13 @@
 import { Component } from './Component.js';
 
-export class Book extends Component {
+export class WorksheetTabs extends Component {
   #sheets;
   
   constructor(sheets = []) {
-    super('book');
-    this.#sheets = this.addCollection('sheets', sheets)
+    super('worksheet-tabs');
+    this.loadComponents(this)
+    
+    // this.#sheets = this.addCollection('sheets', sheets)
   }
 
   get prop() { return this._prop };

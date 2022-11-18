@@ -14,7 +14,14 @@
 </head>
 
 <body>
-  <div id="app">
+  <div data-component="application" id="application" class="appy">
+  </div>
+  <!-- <div data-component="application" id="application">
+    <section data-component="topbar" id="app-topbar"></section>
+    <section data-component="workbook" id="active-workbook"></section>
+    <footer id="app-footer"></footer>
+  </div> -->
+  <!-- <div id="app">
     <section id="app-topbar">
       <header id="app-header">
         <div id="app-header-left">L</div>
@@ -31,11 +38,11 @@
         <div></div>
       </div>
     </section>
-    <section id="app-body">
-
-      <div id="sheet1" class="sheet container">
+    <section class="workbook" id="active-workbook">
+  
+      <div id="worksheet1" class="worksheet container">
         <div class="cellgroup" data-area="corn"></div>
-
+  
         <div class="cellgroup" data-area="hrow">
           <div class="cell"></div>
           <div class="cell"></div>
@@ -99,8 +106,8 @@
           <div class="cell"></div>
           <div class="cell"></div>
         </div>
-        <!-- <div class="range"></div> -->
-
+        <div class="range"></div>
+  
         <div class="cellgroup" data-area="hcol">
           <div class="cell"></div>
           <div class="cell"></div>
@@ -134,55 +141,190 @@
           <div class="cell"></div>
           <div class="cell"></div>
         </div>
-
+  
         <div class="cellgroup" data-area="body"></div>
-
-
-        <!-- <div class="cell" data-area="tr"></div> -->
-        <div class="sheet-overlay"></div>
+  
+  
+        <div class="cell" data-area="tr"></div>
+        <div class="worksheet-overlay"></div>
       </div>
     </section>
     <footer id="app-footer">
-      <div id="sheet-tabs" class="container">
-        <div class="sheet-tab" id="sheet1" data-active="true" data-sheet-name="sheet1">Sheet1</div>
-        <div class="sheet-tab" id="sheet1" data-sheet-name="sheet1">Sheet2</div>
-        <div class="sheet-tab" id="sheet1" data-sheet-name="sheet1">Sheet3</div>
+      <div id="worksheet-tabs" class="container">
+        <div class="worksheet-tab" id="worksheet1" data-active="true" data-sheet-name="worksheet1">Sheet1</div>
+        <div class="worksheet-tab" id="worksheet1" data-sheet-name="worksheet1">Sheet2</div>
+        <div class="worksheet-tab" id="worksheet1" data-sheet-name="worksheet1">Sheet3</div>
       </div>
     </footer>
-  </div>
+  </div> -->
+  <!-- <div id="worksheet1" class="worksheet container"></div> -->
 
+  <script src="./main.js" type="module"></script>
+  <!-- <script src="./script.js" type="module"></script> -->
 
-  <!-- <script src="./main.js" type="module"></script> -->
-  <script src="./script.js" type="module"></script>
-
-  <template id="app-template">
-    <div id="app">
-      <section id="app-topbar"></section>
-      <section id="app-body"></section>
-      <footer id="app-footer"></footer>
+  <template id="application-template">
+    <div id="application">
+      <section data-component="topbar" id="app-topbar"></section>
+      <section data-component="workbook" id="active-workbook"></section>
+      <!-- <footer id="app-footer"></footer> -->
     </div>
   </template>
 
-  <template id="book-template">
-    <div class="sheet" id="" data-component-type="sheet" data-active="false" data-index="0">
-      <div class="cellgroup" data-area="corn"></div>
-      <div class="cellgroup" data-area="hrow"></div>
-      <div class="cellgroup" data-area="hcol"></div>
-      <div class="cellgroup" data-area="body"></div>
+  <template id="workbook-template">
+    <div class="workbook">
+      <div class="worksheet" id="" data-component="worksheet" data-active="false" data-index="0"></div>
+      <div class="worksheet-tabs" id="" data-component="worksheet-tabs"></div>
     </div>
   </template>
 
-  <template id="sheet-template">
-    <div class="sheet" id="" data-component-type="sheet" data-active="false" data-index="0">
+  <template id="topbar-template">
+    <section id="app-topbar" class="tbar comp">
+      <header id="app-header">
+        <div id="app-header-left">L</div>
+        <div id="app-header-center">
+          <h3>Workbook1</h3>
+        </div>
+        <div id="app-header-right">R</div>
+      </header>
+      <div id="app-topbar-options">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+  </template>
+
+  <template id="worksheet-tabs-template">
+    <div id="worksheet-tabs">
+      <div class="worksheet-tab" id="worksheet1" data-active="true" data-sheet-name="worksheet1">Sheet1</div>
+      <div class="worksheet-tab" id="worksheet2" data-sheet-name="worksheet1">Sheet2</div>
+      <div class="worksheet-tab" id="worksheet3" data-sheet-name="worksheet1">Sheet3</div>
+    </div>
+  </template>
+
+  <template id="worksheet-template">
+<div class="worksheet wks-template" id="" data-component="worksheet" data-active="false" data-index="0">
       <div class="cellgroup" data-area="corn"></div>
       <div class="cellgroup" data-area="hrow"></div>
       <div class="cellgroup" data-area="hcol"></div>
-      <div class="cellgroup" data-area="body"></div>
+        <!-- <div class="cellgroup" data-area="hrow">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div> -->
+        <!-- <div class="cellgroup" data-area="hcol">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div> -->
+  
+        <div class="cellgroup" data-area="body"></div>
+  
+      
+      <!-- <div class="cellgroup" data-area="body"></div> -->
     </div>
   </template>
 
   <template id="cell-template">
-    <div class="cell"></div>
+    <div class="cell" data-component="cell" draggable="true" data-display="value" data-column="" data-row="">
+      <div class="cell-value"></div>
+      <div class="cell-formula"></div>
+      <input class="cell-input" type="text"></input>
+    </div>
+  </template>
+  
+  <template id="header-template">
+    <div class="header" data-component="header" data-header-type="column">
+      <div class="header-value"></div>
+    </div>
   </template>
 
 </body>

@@ -1,0 +1,28 @@
+{
+  "name": "My First Workbook",
+  "createdDate": "11/16/2022",
+  "author": "Jaker",
+  "type": "workbook",
+  "path": "",
+  "sheets": {
+    "sheet1": {
+      "cells": {
+        "A1": {
+          "formula": "SUM(B1, C1)",
+          "value": 5
+        },
+        "B1": {
+          "formula": null,
+          "value": 2
+        },
+        "C1": {
+          "formula": null,
+          "value": 3
+        }
+      }
+    },
+    "sheet2": {
+      "cells": {}
+    }
+  }
+}

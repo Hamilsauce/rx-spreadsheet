@@ -3,7 +3,7 @@ const appBody = document.querySelector('#app-body')
 const containers = document.querySelectorAll('.container')
 
 
-console.time('sheet')
+console.time('worksheet')
 // const table = document.querySelector("table")
 const table2 = document.createElement("table")
 const thead = table2.createTHead()
@@ -32,7 +32,7 @@ for (var i = 0; i < 50; i++) {
 }
 appBody.innerHTML = ''
 appBody.append(table2)
-console.timeEnd('sheet')
+console.timeEnd('worksheet')
 
 let DATA = {},
   INPUTS = [].slice.call(document.querySelectorAll("input"));
