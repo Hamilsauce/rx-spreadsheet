@@ -69,6 +69,10 @@ export class Cell extends Component {
 
   get #dataset() { return this.dataset }
 
+  get #editable() { return this.#value.contentEditable }
+
+  set #editable(v) { this.#value.contentEditable = v }
+
   get value() { return this.#value.textContent || null }
 
   set value(v) { this.#value.textContent = v }
@@ -81,7 +85,10 @@ export class Cell extends Component {
 
   get isActive() { return this.#dataset.active === 'true' ? true : false }
 
-  set isActive(v) { this.#dataset.active = v === true ? true : false; }
+  set isActive(v) {
+    this.#dataset.active = v === true ? true : false;
+    this.#editable = v === true ? true : false;
+  }
 
   get isSelected() { return this.#dataset.selected === 'true' ? true : false }
 

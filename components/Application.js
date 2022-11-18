@@ -34,9 +34,9 @@ export class Application extends Component {
     super('application');
 
     this.#parent = null;
-    ComponentLoader.loadComponents(this)
-  this.init()
-    console.log('Application in construxtor', this.components)
+    ComponentLoader.loadComponents(this);
+    this.init();
+    // console.log('Application in construxtor', this.components)
   }
 
   init() {

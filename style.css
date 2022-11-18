@@ -139,7 +139,6 @@ body {
     "hcol body";
   width: 100%;
   height: 100%;
-  text-align: center;
   overflow: scroll;
   scroll-snap-type: mandatory;
 
@@ -198,8 +197,8 @@ body {
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 0px;
   /* padding: 2px 4px; */
   font-size: 14px;
@@ -210,6 +209,8 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100%;
+  text-align: center;
+
   /* border-top: 1px solid transparent; */
   /* border-left: 1px solid transparent; */
   /* outine: none; */
@@ -220,8 +221,9 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
   gap: 0px;
-  /* padding: 2px 4px; */
+  padding: 4px 4px;
   font-size: 14px;
   font-weight: 500;
   color: #656565;
@@ -239,11 +241,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   gap: 0px;
   width: 100%;
   height: 100%;
   border: none;
+  outline: none;
 }
 
 .cell-formula {
@@ -343,15 +346,26 @@ body {
 }
 
 .cell[data-selected=true] {
-  border: 2px solid orange;
-  background: #CD0F0FA6;
+  /* border: 2px solid orange; */
+  /* background: #CD0F0FA6; */
   /* /  background: #A0A0A0A6; */
+  filter: brightness(90%);
+  /* border: 1px solid #00000042; */
   outline: none;
 }
 
 .cellgroup[data-area=body] .cell[data-active=true] {
-  /* border: 2px solid orange; */
-  background: #A0A0A0A6;
+  /* border: 1px solid #0000001C; */
+  filter: brightness(90%);
+
+  /* background: #FAFAFA01; */
+  outline: none;
+}
+
+.cellgroup[data-area=body] .cell[data-active=true] .cell-value {
+  /* border: 2px solid pink; */
+  /* background: #D8D8D840; */
+  font-size: 16px;
   outline: none;
 }
 

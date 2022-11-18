@@ -39,36 +39,49 @@ export class Worksheet extends Component {
   constructor(options) {
     super('worksheet');
 
-    const { height, width, cellSize } = options ? options : DEFAULT_SHEET_OPTIONS
+    const { height, width, cellSize } = options ? options : DEFAULT_SHEET_OPTIONS;
 
     this.#cellSize = cellSize;
-
-    this.addCollection('rows');
-
-    this.addCollection('columns');
-
-    this.addCollection('cells');
-
+   
     ComponentLoader.loadComponents(this)
 
-    this.setSize(width, height, cellSize)
+    this.addCollection('rows');
+    this.addCollection('columns');
+    this.addCollection('cells');
 
-    this.#setEventHandlers()
+    this.setSize(width, height, cellSize);
 
-    // merge(
-    //   fromEvent(this.self, 'click').pipe(
-    //     map(x => x),
-    //     tap(x => console.log('click', x))
-    //   ),
-    //   fromEvent(this.self, 'dblclick').pipe(
-    //     map(x => x),
-    //     tap(x => console.log('click', x))
-    //   ),
-    //   fromEvent(this.self, 'blur').pipe(
-    //     map(x => x),
-    //     tap(x => console.log('blur', x))
-    //   ),
-    // ).subscribe()
+    this.#setEventHandlers();
+
+    this.columnSelection$ = fromEvent(this.columnHeaders, 'click')
+      .pipe(
+        map(e => e.target.closest('.header').textContent.trim()),
+        filter(_ => _),
+        map(columnName => {
+          return [...this.body.querySelectorAll(`.cell`)].filter((c, i) => c.dataset.column === columnName);
+        }),
+        tap(colCells => {
+          colCells.forEach(c => c.dataset.selected = c.dataset.selected === 'true' ? false : true)
+        }),
+      )
+
+    this.rowSelection$ = fromEvent(this.rowHeaders, 'click')
+      .pipe(
+        map(e => e.target.closest('.header').textContent.trim()),
+        filter(_ => _),
+        map(rowName => {
+          return [...this.body.querySelectorAll(`.cell`)].filter((r, i) => c.dataset.row === rowName);
+        }),
+        tap(rowCells => {
+          rowCells.forEach(r => r.dataset.selected = r.dataset.selected === 'true' ? false : true)
+        })
+      );
+
+    this.headerSubscription = merge(
+      this.columnSelection$,
+      this.rowSelection$
+    ).subscribe();
+    
   };
 
   insertHeader(type = 'column', value, before) {
@@ -84,14 +97,9 @@ export class Worksheet extends Component {
 
     this[`${type}s`].set(h, h);
 
-    if (!before) {
+    if (!before) { group.append(h) }
 
-      group.append(h)
-    }
-
-    else if (typeof before === 'number') {
-      group.insertAdjacentElement(before, h);
-    }
+    else if (typeof before === 'number') { group.insertAdjacentElement(before, h); }
 
     else { group.insertBefore(h, before) }
 
@@ -167,17 +175,17 @@ export class Worksheet extends Component {
 
     if (this.cells.has(targ)) { return this.cells.get(targ); }
 
-    if (this.rows.has(targ)) { return this.rows.get(targ); }
+    // if (this.rows.has(targ)) { return this.rows.get(targ); }
 
-    if (this.columns.has(targ)) { return this.columns.get(targ); }
+    // if (this.columns.has(targ)) { return this.columns.get(targ); }
 
   }
 
   activateCell(cell) {
-    if (this.activeCell) {
+    if (this.activeCell && this.activeCell !== cell) {
       this.activeCell.activate(false);
     }
-
+    // console.log('cell', cell)
     cell.activate(true);
 
     return this.activeCell;
@@ -189,6 +197,7 @@ export class Worksheet extends Component {
 
   #onClick(e) {
     const targ = this.getTargetComponent(e);
+    if (!targ) return;
     this.activateCell(targ)
     // this.printCollections()
   }

@@ -318,34 +318,35 @@ const columnSelection$ = fromEvent(columnHeaders, 'click')
       });
       return col;
     }),
- tap(x => console.warn('columnSelection$', x)),
+    tap(x => console.warn('columnSelection$', x)),
     tap(colCells => {
       colCells.forEach(c => c.dataset.selected = c.dataset.selected === 'true' ? false : true)
     }),
   )
-.subscribe();
+  .subscribe();
 
 const rowSelection$ = fromEvent(rowHeaders, 'click')
-  .pipe(
-    map(e => e.target.closest('.cell').textContent.trim()),
-    filter(_ => _),
-    map(rowName => {
-      const row = [...gridBody.querySelectorAll(`.cell`)]
-        .filter((r, i) => {
-          return r.dataset.address.replace(/\D+/, '') === rowName
-        });
+.pipe(
+  map(e => e.target.closest('.cell').textContent.trim()),
+  filter(_ => _),
+  map(rowName => {
+    const row = [...gridBody.querySelectorAll(`.cell`)]
+      .filter((r, i) => {
+        return r.dataset.address.replace(/\D+/, '') === rowName;
+      });
 
-      return row;
-    }),
-    tap(rowCells => {
-      rowCells.forEach(r => r.dataset.selected = r.dataset.selected === 'true' ? false : true)
-    }))
+    return row;
+  }),
+  tap(rowCells => {
+    rowCells.forEach(r => r.dataset.selected = r.dataset.selected === 'true' ? false : true)
+  })
+);
 
 merge(
-    columnSelection$,
-    rowSelection$
-  )
-  // .subscribe();
+  columnSelection$,
+  rowSelection$
+)
+// .subscribe();
 
 
 gridBody.innerHTML = '';
