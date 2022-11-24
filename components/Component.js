@@ -1,5 +1,5 @@
 import { EventEmitter } from '../lib/event-emitter.js';
-import { Collection } from '../lib/Collection.js';
+import { Collection } from '../lib/collection.js';
 // import ham from 'https://hamilsauce.github.io/hamhelper/hamhelper1.0.0.js';
 // import { ComponentConfig } from './component-config.js';
 // const { 
