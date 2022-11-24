@@ -2,7 +2,9 @@ import { EventEmitter } from '../lib/event-emitter.js';
 import { Collection } from '../lib/Collection.js';
 import ham from 'https://hamilsauce.github.io/hamhelper/hamhelper1.0.0.js';
 // import { ComponentConfig } from './component-config.js';
-const { template, utils } = ham;
+const { 
+  // template, 
+utils } = ham;
 
 const templates = new Map([
   ['app', document.querySelector(`#app-template`)],
@@ -29,10 +31,10 @@ export class Component extends EventEmitter {
   render() { return this.self }
 
   create() {}
-  
-  setData(data={}) {
+
+  setData(data = {}) {
     Object.assign(this.dataset, data);
-    
+
     return this;
   }
 
@@ -46,24 +48,28 @@ export class Component extends EventEmitter {
   }
 
   #template(name = '') {
-    return template(name);
+    return document.querySelector(`#${name}-template`)
+      .content.firstElementChild
+      .cloneNode(true);
+
+    // return template(name);
   };
 
-   loadComponents(targetComponent) {
+  loadComponents(targetComponent) {
 
-  //   const foundComps = [...targetComponent.dom.querySelectorAll(`[data-component]`)];
-  //   console.groupCollapsed('load' + targetComponent.name);
-  //   console.warn('targetComponent.dom', targetComponent.dom)
-  //   console.groupEnd('load' + targetComponent.name);
+    //   const foundComps = [...targetComponent.dom.querySelectorAll(`[data-component]`)];
+    //   console.groupCollapsed('load' + targetComponent.name);
+    //   console.warn('targetComponent.dom', targetComponent.dom)
+    //   console.groupEnd('load' + targetComponent.name);
 
-  //   foundComps.forEach((el) => {
-  //     const name = el.dataset.component;
-  //     const component = ComponentConfig()[name];
+    //   foundComps.forEach((el) => {
+    //     const name = el.dataset.component;
+    //     const component = ComponentConfig()[name];
 
-  //     if (!(name && component)) throw new Error('Unable to find component or name in loadComponents. Target Component & New Component Name: ', targetComponent, name);
+    //     if (!(name && component)) throw new Error('Unable to find component or name in loadComponents. Target Component & New Component Name: ', targetComponent, name);
 
-  //     this.addComponent(targetComponent, component);
-  //   });
+    //     this.addComponent(targetComponent, component);
+    //   });
   }
 
   // static addComponent(targetComponent, name, ComponentClass) {
@@ -76,7 +82,7 @@ export class Component extends EventEmitter {
 
 
   get dom() { return this.#self }
-  
+
   get dataset() { return this.#self.dataset }
 
   get self() { return this.#self }
