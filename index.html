@@ -11,178 +11,55 @@
   <title>goo cal</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.3.0/rxjs.umd.min.js" integrity="sha512-y3JTS47nnpKORJX8Jn1Rlm+QgRIIZHtu3hWxal0e81avPrqUH48yk+aCi+gprT0RMAcpYa0WCkapxe+bpBHD6g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./selection-box.css" />
 </head>
 
 <body>
   <div data-component="application" id="application" class="appy">
   </div>
-  <!-- <div data-component="application" id="application">
-    <section data-component="topbar" id="app-topbar"></section>
-    <section data-component="workbook" id="active-workbook"></section>
-    <footer id="app-footer"></footer>
-  </div> -->
-  <!-- <div id="app">
-    <section id="app-topbar">
-      <header id="app-header">
-        <div id="app-header-left">L</div>
-        <div id="app-header-center">
-          <h3>Workbook1</h3>
-        </div>
-        <div id="app-header-right">R</div>
-      </header>
-      <div id="app-topbar-options">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </section>
-    <section class="workbook" id="active-workbook">
-  
-      <div id="worksheet1" class="worksheet container">
-        <div class="cellgroup" data-area="corn"></div>
-  
-        <div class="cellgroup" data-area="hrow">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-        </div>
-        <div class="range"></div>
-  
-        <div class="cellgroup" data-area="hcol">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-        </div>
-  
-        <div class="cellgroup" data-area="body"></div>
-  
-  
-        <div class="cell" data-area="tr"></div>
-        <div class="worksheet-overlay"></div>
-      </div>
-    </section>
-    <footer id="app-footer">
-      <div id="worksheet-tabs" class="container">
-        <div class="worksheet-tab" id="worksheet1" data-active="true" data-sheet-name="worksheet1">Sheet1</div>
-        <div class="worksheet-tab" id="worksheet1" data-sheet-name="worksheet1">Sheet2</div>
-        <div class="worksheet-tab" id="worksheet1" data-sheet-name="worksheet1">Sheet3</div>
-      </div>
-    </footer>
-  </div> -->
   <!-- <div id="worksheet1" class="worksheet container"></div> -->
-
+  
+  <script type="importmap">
+    {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+  
   <script src="./main.js" type="module"></script>
   <!-- <script src="./script.js" type="module"></script> -->
-
+  
   <template id="application-template">
     <div id="application">
       <section data-component="topbar" id="app-topbar"></section>
       <section data-component="workbook" id="active-workbook"></section>
+      
+       <svg id="canvas" viewBox="-0 -0 9 15" preserveAspectRatio="xMidYMin meet" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+      <g class="tile-selector" transform="translate(0,0) rotate(0) scale(1)">
+        <rect stroke-width="0.07" stroke="green" fill="none" />
+        <circle class="selection-handle" data-handle="start" id="start-handle" r="0.33" fill="white" stroke-width="0.07" stroke="green" />
+        <circle class="selection-handle" data-handle="end" id="end-handle" r="0.33" fill="white" stroke-width="0.07" stroke="green" />
+      </g>
+    </svg>
+   
       <!-- <footer id="app-footer"></footer> -->
     </div>
   </template>
-
+  
   <template id="workbook-template">
     <div class="workbook">
       <div class="worksheet" id="" data-component="worksheet" data-active="false" data-index="0"></div>
       <div class="worksheet-tabs" id="" data-component="worksheet-tabs"></div>
     </div>
   </template>
-
+  
   <template id="topbar-template">
     <section id="app-topbar" class="tbar comp">
       <header id="app-header">
         <div id="app-header-left">L</div>
         <div id="app-header-center">
-          <h3>Workbook1</h3>
+          <h3 id="workbook-title">Workbook1</h3>
         </div>
         <div id="app-header-right">R</div>
       </header>
@@ -195,7 +72,7 @@
       </div>
     </section>
   </template>
-
+  
   <template id="worksheet-tabs-template">
     <div id="worksheet-tabs">
       <div class="worksheet-tab" id="worksheet1" data-active="true" data-sheet-name="worksheet1">Sheet1</div>
@@ -203,116 +80,19 @@
       <div class="worksheet-tab" id="worksheet3" data-sheet-name="worksheet1">Sheet3</div>
     </div>
   </template>
-
+  
   <template id="worksheet-template">
-<div class="worksheet wks-template" id="" data-component="worksheet" data-active="false" data-index="0">
+    <div class="worksheet wks-template" id="" data-component="worksheet" data-active="false" data-index="0">
       <div class="cellgroup" data-area="corn"></div>
       <div class="cellgroup" data-area="hrow"></div>
       <div class="cellgroup" data-area="hcol"></div>
-        <!-- <div class="cellgroup" data-area="hrow">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-        </div> -->
-        <!-- <div class="cellgroup" data-area="hcol">
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-        </div> -->
-  
-        <div class="cellgroup" data-area="body"></div>
-  
+      <div class="cellgroup" data-area="body"></div>
       
-      <!-- <div class="cellgroup" data-area="body"></div> -->
+      
     </div>
+    
   </template>
-
+  
   <template id="cell-template">
     <div class="cell" data-component="cell" draggable="true" data-display="value" data-column="" data-row="">
       <div class="cell-value"></div>
@@ -324,9 +104,12 @@
   <template id="header-template">
     <div class="header" data-component="header" data-header-type="column">
       <div class="header-value"></div>
+      <div class="header-handle"></div>
+      <!-- <div class="header-internal">
+      </div> -->
     </div>
   </template>
-
+  
 </body>
 
 </html>

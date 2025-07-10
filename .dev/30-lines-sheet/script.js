@@ -3,7 +3,7 @@ const appBody = document.querySelector('#app-body')
 const containers = document.querySelectorAll('.container')
 
 
-console.time('worksheet')
+// console.time('worksheet')
 // const table = document.querySelector("table")
 const table2 = document.createElement("table")
 const thead = table2.createTHead()
@@ -11,28 +11,28 @@ const tbody = table2.createTBody()
 
 for (var i = 0; i < 50; i++) {
   let row;
-
+  
   if (i === 0) {
-
+    
     row = thead.insertRow(-1);
   } else {
     row = tbody.insertRow(-1);
     
   }
-
+  
   // var row = document.querySelector("table").insertRow(-1);
   for (var j = 0; j < 30; j++) {
     var letter = String.fromCharCode("A".charCodeAt(0) + j - 1);
     let cell = row.insertCell(-1)
     cell.innerHTML = i && j ? "<input id='" + letter + i + "'/>" : i || letter;
     if (cell.textContent == letter) {
-
+      
     }
   }
 }
 appBody.innerHTML = ''
 appBody.append(table2)
-console.timeEnd('worksheet')
+// console.timeEnd('worksheet')
 
 let DATA = {},
   INPUTS = [].slice.call(document.querySelectorAll("input"));
@@ -40,20 +40,23 @@ let DATA = {},
 INPUTS.forEach((elm) => {
   const data = DATA
   elm.onfocus = function(e) {
+    // console.warn('localStorage[e.target.id]', localStorage[e.target.id])
     e.target.value = localStorage[e.target.id] || "";
   };
   elm.onblur = function(e) {
     localStorage[e.target.id] = e.target.value;
+    console.warn('e.target.value', e.target.value)
     computeAll();
   };
   const getter = () => {
     var value = localStorage[elm.id] || "";
     if (value.charAt(0) == "=") {
-      // with(DATA)
+      with(DATA)
       // const data = Object.assign({}, DATA)
       // const value2 =DATA.value
       // console.log('value  ', value)
-      // const {value} = DATA
+      // const { value } = DATA
+      // console.warn('value.substring(1)', value.substring(1))
       return eval(value.substring(1));
       // return eval(value.substring(1));
     } else { return isNaN(parseFloat(value)) ? value : parseFloat(value); }
@@ -64,5 +67,10 @@ INPUTS.forEach((elm) => {
 });
 
 (window.computeAll = () => {
-  INPUTS.forEach((elm) => { try { elm.value = DATA[elm.id]; } catch (e) {} });
+  INPUTS.forEach((elm) => {
+    try {
+      // console.warn('DATA[elm.id]', DATA[elm.id])
+      elm.value = DATA[elm.id] || '';
+    } catch (e) {}
+  });
 })();
