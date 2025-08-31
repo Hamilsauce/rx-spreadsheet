@@ -1,7 +1,43 @@
+svg,
+svg * {
+  pointer-events: none;
+
+}
+
 #selection-box {
   position: absolute;
   background: none;
   border: 2px solid #369959;
   z-index: 1000;
+  fill: #CFFF5C5E;
+  /* pointer-events: none; */
+}
+
+.tile-selector * {
+  /* transition: 0.1s; */
+}
+
+.selection-handle {
+  transition: stroke-width 0.075s;
+}
+
+.selection-handle[data-is-dragging=true] {
+  /* fill: orange; */
+  stroke-width: 0.25;
+  width: 0.1px;
+  height: 0.1px;
+  
+}
+
+.selection {
+  filter: invert(100%);
+  fill: #000000;
+  stroke: #CCDCDC8F;
+  stroke-width: 0.05;
+}
+
+#surface {
+  fill: #CFFF5C5E;
   pointer-events: none;
+  
 }

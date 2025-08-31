@@ -12,7 +12,7 @@ const validatePoints = (...points) => {
   return points.every(point => validatePoint(point));
 };
 
-export class TileSelector extends EventEmitter {
+export class TileSelector extends EventTarget {
   #self;
   #selectionBox;
   #dragTargetHandle;
@@ -32,7 +32,7 @@ export class TileSelector extends EventEmitter {
     super();
     
     this.ctx = ctx;
-    
+    // console.warn('this.ctx', this.ctx)
     this.#unitSize = options.unitSize ? options.unitSize : this.#unitSize;
     
     this.#self = document.createElementNS(SVG_NS, 'g');
@@ -63,9 +63,7 @@ export class TileSelector extends EventEmitter {
     this.#handles.start.addEventListener('pointerdown', this.dragStartHandler);
     this.#handles.end.addEventListener('pointerdown', this.dragStartHandler);
     
-    window.selectionBox = this;
-    
-     navigator.clipboard.writeText(this.dom.outerHTML)
+    navigator.clipboard.writeText(this.dom.outerHTML)
   }
   
   get isSelecting() { return Object.values(this.#handles).some((handle) => handle.dataset.isDragging === 'true'); };
@@ -277,7 +275,7 @@ export class TileSelector extends EventEmitter {
     this.#dragTargetHandle = null;
     
     const pt = this.domPoint(e.clientX, e.clientY);
-  
+    
     
     if (pt.x < 0 || pt.y < 0) {
       console.warn('out of range', pt.x, pt.y)

@@ -133,14 +133,14 @@ body {
 }
 
 .worksheet {
-  /* position: sticky; */
+  position: sticky;
   display: grid;
   grid-template-areas:
     "corn hrow"
     "hcol body";
   width: 100%;
   height: 100%;
-  overflow: scroll;
+  /* overflow: scroll; */
   scroll-snap-type: mandatory;
   
   /* scroll-snap-type-x: mandatory; */
@@ -391,7 +391,7 @@ body {
   border-right: 1px solid #D1D1D1;
   background: #D1D1D1;
   z-index: 20;
-  /* scroll-snap-type: mandatory; */
+  scroll-snap-type: mandatory;
 }
 
 .cellgroup[data-area=body] {
@@ -400,8 +400,8 @@ body {
   top: 30px;
   left: 30px;
   display: grid;
-  /* grid-template-columns: repeat(31, 90px); */
-  /* grid-template-rows: repeat(31, 30px); */
+  grid-template-columns: repeat(31, 90px);
+  grid-template-rows: repeat(31, 30px);
   gap: 1px;
   
 }
@@ -444,6 +444,6 @@ body {
   height: 650px;
   width: 380px;
   z-index: 1000;
-  background: transparent;
+  background: none;
   pointer-events: none;
 }

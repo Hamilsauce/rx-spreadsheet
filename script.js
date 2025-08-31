@@ -100,8 +100,8 @@ let cellFrag = new DocumentFragment();
 gridBody.style.gridTemplateRows = `repeat(${dims.rcount}, ${30}px)`
 gridBody.style.gridTemplateColumns = `repeat(${dims.ccount}, ${90}px)`
 
-const application = new Application();
-console.log('application', application)
+// const application = new Application();
+// console.log('application', application)
 const sheetModel = new SheetModel(dims.rcount, dims.ccount)
 const sheetView = new Worksheet(DEFAULT_SHEET_OPTIONS)
 
