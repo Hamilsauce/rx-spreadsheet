@@ -10,13 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
   <title>incel</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.3.0/rxjs.umd.min.js" integrity="sha512-y3JTS47nnpKORJX8Jn1Rlm+QgRIIZHtu3hWxal0e81avPrqUH48yk+aCi+gprT0RMAcpYa0WCkapxe+bpBHD6g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link rel="stylesheet" href="./virtual-grid-scroll/spreadsheet.css" />
-  <link rel="stylesheet" href="./virtual-grid-scroll/style.css" />
-  <link rel="stylesheet" href="./virtual-grid-scroll/selection-box.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./selection-box.css" />
 </head>
 
 <body>
-  <div data-component="application" id="application" class="appy"></div>
+  <div data-component="application" id="application" class="appy">
+  </div>
   <!-- <div id="worksheet1" class="worksheet container"></div> -->
   
   <script type="importmap">
@@ -27,23 +27,22 @@
   }
 </script>
   
-  <script src="./virtual-grid-scroll/main.js" type="module"></script>
-  <script src="./virtual-grid-scroll/virtual-scroller-merge1.js" type="module"></script>
-  <!-- <script src="./script.js" type="module"></script> -->
+  <script src="./main.js" type="module"></script>
+  <script src="./script.js" type="module"></script>
   
   <template id="application-template">
     <div id="application">
       <section data-component="topbar" id="app-topbar"></section>
       <section data-component="workbook" id="active-workbook"></section>
       
-      <!-- <svg id="canvas" viewBox="-0 -0 9 15" preserveAspectRatio="xMidYMin meet" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-        <g class="tile-selector" transform="translate(0,0) rotate(0) scale(1)">
-          <rect stroke-width="0.07" stroke="green" fill="none" />
-          <circle class="selection-handle" data-handle="start" id="start-handle" r="0.33" fill="white" stroke-width="0.07" stroke="green" />
-          <circle class="selection-handle" data-handle="end" id="end-handle" r="0.33" fill="white" stroke-width="0.07" stroke="green" />
-        </g>
-      </svg> -->
-      
+       <svg id="canvas" viewBox="-0 -0 9 15" preserveAspectRatio="xMidYMin meet" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+      <g class="tile-selector" transform="translate(0,0) rotate(0) scale(1)">
+        <rect stroke-width="0.07" stroke="green" fill="none" />
+        <circle class="selection-handle" data-handle="start" id="start-handle" r="0.33" fill="white" stroke-width="0.07" stroke="green" />
+        <circle class="selection-handle" data-handle="end" id="end-handle" r="0.33" fill="white" stroke-width="0.07" stroke="green" />
+      </g>
+    </svg>
+   
       <!-- <footer id="app-footer"></footer> -->
     </div>
   </template>
@@ -84,15 +83,12 @@
   
   <template id="worksheet-template">
     <div class="worksheet wks-template" id="" data-component="worksheet" data-active="false" data-index="0">
-      <div id="worksheet-headers-corn" class="cellgroup" data-area="corn"></div>
-      <div id="worksheet-headers-row" class="cellgroup" data-area="hrow"></div>
-      <div id="worksheet-headers-col" class="cellgroup" data-area="hcol"></div>
-      <div id="worksheet-body" class="cellgroup" data-area="body">
-        <div id="left-bound"></div>
-        
-        <!-- <div id="grid-inner" class="cellgroup" _data-area="body"></div> -->
-        <div id="worksheet-body-inner" class="cellgroup" _data-area="body"></div>
-      </div>
+      <div class="cellgroup" data-area="corn"></div>
+      <div class="cellgroup" data-area="hrow"></div>
+      <div class="cellgroup" data-area="hcol"></div>
+      <div class="cellgroup" data-area="body"></div>
+      
+      
     </div>
     
   </template>
@@ -108,7 +104,9 @@
   <template id="header-template">
     <div class="header" data-component="header" data-header-type="column">
       <div class="header-value"></div>
-      <!-- <div class="header-handle"></div> -->
+      <div class="header-handle"></div>
+      <!-- <div class="header-internal">
+      </div> -->
     </div>
   </template>
   

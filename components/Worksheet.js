@@ -80,7 +80,7 @@ export class Worksheet extends Component {
     this.headerSubscription = merge(
       this.columnSelection$,
       this.rowSelection$
-    ).subscribe();
+    )//.subscribe();
     
   };
 
@@ -154,14 +154,14 @@ export class Worksheet extends Component {
       this.insertHeader('row', row + 1)
     }
 
-    for (let row = 0; row < height; row++) {
-      for (let column = 0; column < width; column++) {
-        const cell = this.createCell(this.getColumnName(column), row + 1)
-        this.body.append(
-          this.cells.set(cell.dom, cell).get(cell.dom).dom
-        )
-      }
-    }
+    // for (let row = 0; row < height; row++) {
+    //   for (let column = 0; column < width; column++) {
+    //     const cell = this.createCell(this.getColumnName(column), row + 1)
+    //     this.body.append(
+    //       this.cells.set(cell.dom, cell).get(cell.dom).dom
+    //     )
+    //   }
+    // }
 
     return this;
   }
@@ -263,13 +263,15 @@ export class Worksheet extends Component {
 
   get html() { return this.self }
 
-  get body() { return this.self.querySelector('.cellgroup[data-area="body"') }
+  get body() { return this.self.querySelector('.cellgroup[data-area="body"]') }
+  
+  // get body() { return this.self.querySelector('#worksheet-body-inner') }
 
-  get columnHeaderGroup() { return this.self.querySelector('.cellgroup[data-area="hrow"') }
+  get columnHeaderGroup() { return this.self.querySelector('.cellgroup[data-area="hrow"]') }
 
-  get columnHeaders() { return [this.self.querySelector('.cellgroup[data-area="hrow"').children] }
+  get columnHeaders() { return [this.self.querySelector('.cellgroup[data-area="hrow"]').children] }
 
-  get rowHeaderGroup() { return this.self.querySelector('.cellgroup[data-area="hcol"') }
+  get rowHeaderGroup() { return this.self.querySelector('.cellgroup[data-area="hcol"]') }
 
-  get rowHeaders() { return [this.self.querySelector('.cellgroup[data-area="hcol"').children] }
+  get rowHeaders() { return [this.self.querySelector('.cellgroup[data-area="hcol"]').children] }
 }

@@ -1,0 +1,457 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  z-index: 0;
+  /* touch-action: none; */
+  user-select: none;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  
+  font-size: 16px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#application {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  z-index: 1002;
+}
+
+#app-topbar {
+  display: grid;
+  grid-template-rows: auto 40px;
+  grid-template-columns: 1fr;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  background: #217345;
+  color: #E9E9E9;
+}
+
+#app-topbar-options {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-columns: repeat(auto, 1fr);
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  background: #217345;
+  color: #E9E9E9;
+}
+
+#app-topbar-options div {
+  width: 100%;
+  height: 100%;
+}
+
+#app-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  padding: 4px 8px;
+  background: #217345;
+  color: #E9E9E9;
+  font-size: 14px;
+}
+
+.workbook {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 40px;
+  grid-template-columns: 1fr;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#active-workbook {
+  display: grid;
+  grid-template-rows: 1fr 40px;
+  grid-template-columns: 1fr;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+
+/* #app-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  background: #E7E7E7;
+  border-top: 1px solid #D1D1D1;
+} */
+
+#worksheet-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 2px 30px;
+}
+
+.worksheet-tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  background: #CCCCCC;
+  height: 100%;
+  padding: 4px 12px;
+  background: #E9E9EB;
+  border-right: 1px solid #C7C7C7;
+  border-radius: 3px;
+}
+
+.worksheet-tab[data-active=true] {
+  background: #CCCCCC;
+}
+
+.worksheet {
+  /* position: sticky; */
+  display: grid;
+  grid-template-areas:
+    "corn hrow"
+    "hcol body";
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  scroll-snap-type: mandatory;
+  gap:0px;
+  /* scroll-snap-type-x: mandatory; */
+  background: #D1D1D1;
+}
+
+.sheet-overlay {
+  position: absolute;
+  top: 26px;
+  left: 30px;
+  z-index: 15;
+}
+
+.selection {
+  display: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 800;
+  background: #E3DB0D30;
+  z-index: 25;
+  /* touch-action: none; */
+}
+
+.cellgroup[data-area=corn] {
+  position: sticky;
+  grid-area: corn;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  z-index: 30;
+  border: 1px solid #D1D1D1;
+  background: #E7E7E7;
+}
+
+
+/* .cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  padding: 2px 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #656565;
+  background: #E7E7E7;
+  border: 2px solid transparent;
+  overflow: hidden;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  outine: none;
+} */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  /* padding: 2px 4px; */
+  font-size: 14px;
+  font-weight: 500;
+  color: #656565;
+  background: #E7E7E7;
+  /* border-right: 1px solid #D1D1D1; */
+
+  /* border: 2px solid transparent; */
+  /* overflow: hidden; */
+  /* width: 100%; */
+  /* height: 100%; */
+  text-align: center;
+  
+  /* border-top: 1px solid transparent; */
+  /* border-left: 1px solid transparent; */
+  /* outine: none; */
+}
+
+.header-value {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  gap: 0px;
+  padding: 4px 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #656565;
+  background: #E7E7E7;
+  /* border: 2px solid transparent; */
+  /* overflow: hidden; */
+  width: 100%;
+  height: 100%;
+  /* border-top: 1px solid transparent; */
+  /* border-left: 1px solid transparent; */
+  /* outine: none; */
+}
+
+.cell-value {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.cell-formula {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: none;
+}
+
+.cell-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: none;
+}
+
+/* 
+.header[data-header-type="row"] {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  padding: 2px 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #656565;
+  background: #E7E7E7;
+  border: 2px solid transparent;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.header[data-header-type="row"] .header-handle {
+  width: 100%;
+  height: 10px;
+}
+
+.header[data-header-type="column"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  
+  align-items: center;
+  gap: 0px;
+  padding: 2px 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #656565;
+  background: #E7E7E7;
+  border: 2px solid transparent;
+  overflow: hidden;
+  width: 100%;
+  width: 90px;
+  height: 100%;
+  text-align: center;
+  touch-action: none;
+}
+.header[data-header-type="column"] .header-handle {
+  height: 100%;
+  width: 5px;
+}
+ */
+
+.header-value {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  /* padding: 4px 4px; */
+  font-size: 14px;
+  font-weight: 500;
+  color: #656565;
+  background: #E7E7E7;
+  /* width: 100%; */
+  /* height: 100%; */
+}
+
+.header-handle {
+  background: #D5D5D5;
+}
+
+
+.cellgroup[data-area=hrow] .header
+/* .cellgroup[data-area=hcol] .headerk */
+{
+  /* position: absolute; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  font-size: 13px;
+  width: 100%;
+  height: 100%;
+  /* border-right: 1px solid #D1D1D1; */
+
+}
+
+/* .cezllgroup[data-area=hrow] { */
+
+
+.cellgroup[data-area=hrow] {
+  position: sticky;
+  top: 0;
+  left: 30px;
+  grid-area: hrow;
+  z-index: 10;
+  display: grid;
+  grid-auto-columns: 90px;
+  grid-template-rows: 30px;
+  grid-auto-flow: column;
+  gap: 0px;
+  height: 30px;
+  width: 100%;
+  /* border: 0px solid #AFAFAF; */
+  background: #D1D1D1;
+  z-index: 20;
+  /* scroll-snap-type: mandatory; */
+  
+}
+
+.cellgroup[data-area=hcol] {
+  position: sticky;
+  top: 40px;
+  left: 0;
+  grid-area: hcol;
+  display: grid;
+  grid-template-rows: repeat(30, 30px);
+  grid-template-columns: 30px;
+  gap: 0px;
+  height: 100%;
+  /* border-right: 1px solid #D1D1D1; */
+  background: #D1D1D1;
+  z-index: 20;
+  /* scroll-snap-type: mandatory; */
+}
+
+.cellgroup[data-area=body] {
+  grid-area: body;
+  position: sticky;
+  top: 30px;
+  left: 30px;
+  /* display: grid; */
+  /* grid-template-columns: repeat(31, 90px); */
+  /* grid-template-rows: repeat(31, 30px); */
+  gap: 0px;
+  
+}
+
+
+
+.cellgroup[data-area=body] .cell {
+  background: #FFFFFF;
+}
+
+.cellgroup[data-area=body] .cell[data-data-type=string] {
+  justify-content: left;
+}
+
+.cell[data-selected=true] {
+  filter: brightness(90%);
+  outline: none;
+}
+
+.cellgroup[data-area=body] .cell[data-active=true] {
+  filter: brightness(90%);
+  outline: none;
+}
+
+.cellgroup[data-area=body] .cell[data-active=true] .cell-value {
+  font-size: 16px;
+  outline: none;
+}
+
+.group {
+  display: contents;
+  background: #BF6222;
+  border: 2px solid #22AC2A;
+}
+
+#canvas {
+  position: absolute;
+  left: 31px;
+  top: 92px;
+  height: 650px;
+  width: 380px;
+  z-index: 1000;
+  background: transparent;
+  pointer-events: none;
+}
