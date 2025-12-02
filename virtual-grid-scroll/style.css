@@ -57,7 +57,7 @@ body {
   width: 400px;   /* viewport width */
   height: 300px;  /* viewport height */
   overflow: auto;
-  border: 1px solid #888;
+  border: 0px solid #888;
   font-family: sans-serif;
 }
 
@@ -75,7 +75,7 @@ body {
   width: 90px;
   height: 30px;
   box-sizing: border-box;
-  border-right: 0.5px solid #ddd;
+  /* border-right: 0.5px solid #ddd; */
   display: flex;
   align-items: center;
   justify-content: center;

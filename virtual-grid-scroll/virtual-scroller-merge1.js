@@ -80,30 +80,35 @@ const render = () => {
   
   // Column Headers
   for (let c = startCol; c < endCol; c++) {
-    let colHeader = headerColumnCells[c]
+    let colHeader = headerColumnCells[index];
+    
     if (!colHeader) {
       colHeader = document.createElement('div');
       colHeader.className = 'header';
       headerColumnCells.push(colHeader);
     }
+    
     colHeader.innerHTML = `<div class="header-value">${c}</div><div class="header-handle"></div>`;
     colHeader.style.top = `${c * cellWidth}px`;
     wksColumnHeaders.appendChild(colHeader);
+    
+    index++;
   }
   
   // Row Headers
-  // for (let c = startCol; c < endCol; c++) {
-  //   let colHeader = headerColumnCells[c]
-  //   if (!colHeader) {
-  //     colHeader = document.createElement('div');
-  //     colHeader.className = 'header';
-  //     headerColumnCells.push(colHeader);
-  //   }
-  //   colHeader.innerHTML = `<div class="header-value">${c}</div><div class="header-handle"></div>`;
-  //   colHeader.style.top = `${c * cellWidth}px`;
-  //   wksRowHeaders.appendChild(colHeader);
-  // }
+  for (let c = startCol; c < endCol; c++) {
+    let rowHeader = headerRowCells[c]
+    if (!rowHeader) {
+      rowHeader = document.createElement('div');
+      rowHeader.className = 'header';
+      headerRowCells.push(rowHeader);
+    }
+    rowHeader.innerHTML = `<div class="header-value">${c}</div><div class="header-handle"></div>`;
+    rowHeader.style.top = `${c * cellHeight}px`;
+    wksRowHeaders.appendChild(rowHeader);
+  }
   
+  index = 0
   // Cells
   for (let r = startRow; r < endRow; r++) {
     
@@ -115,7 +120,7 @@ const render = () => {
         cells.push(cell);
       }
       cell.style.top = `${r * cellHeight}px`;
-      cell.style.left = `${(c * cellWidth) + 1}px`;
+      cell.style.left = `${(c * cellWidth)}px`;
       cell.textContent = `${r},${c}`;
       cell.dataset.address = `${r}_${c}`
       
